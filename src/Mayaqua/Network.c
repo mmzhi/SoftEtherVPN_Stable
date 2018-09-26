@@ -13222,6 +13222,7 @@ bool StartSSLEx(SOCK *sock, X *x, K *priv, bool client_tls, UINT ssl_timeout, ch
 		sock->CipherName = CopyStr((char *)SSL_get_cipher(sock->ssl));
 	}
 	Unlock(openssl_lock);
+	Debug("SSL connected with %s\n", SSL_get_version(sock->ssl));
 
 	Unlock(sock->ssl_lock);
 
@@ -19750,6 +19751,8 @@ LIST *GetHostIPAddressListInternal()
 		struct addrinfo hint;
 		struct addrinfo *info;
 
+//		Debug("***** GetHostIPAddressListInternal IPv4 Begin *****\n");
+
 		Zero(&hint, sizeof(hint));
 		hint.ai_family = AF_INET;
 		hint.ai_socktype = SOCK_DGRAM;
@@ -19771,12 +19774,15 @@ LIST *GetHostIPAddressListInternal()
 					InAddrToIP(&ip, &addr);
 					AddHostIPAddressToList(o, &ip);
 
+//					Debug("%r\n", &ip);
+
 					current = current->ai_next;
 				}
 			}
 
 			freeaddrinfo(info);
 		}
+//		Debug("***** GetHostIPAddressListInternal IPv4 End *****\n");
 	}
 
 #ifndef	UNIX_LINUX
@@ -19793,6 +19799,8 @@ LIST *GetHostIPAddressListInternal()
 		hint.ai_socktype = SOCK_DGRAM;
 		hint.ai_protocol = IPPROTO_UDP;
 		info = NULL;
+
+//		Debug("***** GetHostIPAddressListInternal IPv6 Begin *****\n");
 
 		if (getaddrinfo(hostname, NULL, &hint, &info) == 0)
 		{
@@ -19811,12 +19819,15 @@ LIST *GetHostIPAddressListInternal()
 
 					AddHostIPAddressToList(o, &ip);
 
+//					Debug("%r\n", &ip);
+
 					current = current->ai_next;
 				}
 			}
 
 			freeaddrinfo(info);
 		}
+//		Debug("***** GetHostIPAddressListInternal IPv6 End *****\n");
 	}
 #endif	// UNIX_LINUX
 #endif	// MAYAQUA_SUPPORTS_GETIFADDRS

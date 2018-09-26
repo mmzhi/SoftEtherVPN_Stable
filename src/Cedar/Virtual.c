@@ -5009,7 +5009,7 @@ void PollingNatTcp(VH *v, NAT_ENTRY *n)
 			if (n->TcpFinished)
 			{
 				// Disconnect if all data transmission has completed
-				if (n->SendFifo->size == 0)
+				if (n->SendFifo->size == 0 && n->RecvFifo->size == 0)
 				{
 					n->TcpStatus = NAT_TCP_SEND_RESET;
 				}
@@ -10306,12 +10306,12 @@ void GenMacAddress(UCHAR *mac)
 	Hash(hash, b->Buf, b->Size, true);
 
 	// Generate a MAC address
-	mac[0] = 0x00;
-	mac[1] = 0xAC;		// AC hurray
-	mac[2] = hash[0];
-	mac[3] = hash[1];
-	mac[4] = hash[2];
-	mac[5] = hash[3];
+	mac[0] = 0x5E;
+	mac[1] = hash[0];
+	mac[2] = hash[1];
+	mac[3] = hash[2];
+	mac[4] = hash[3];
+	mac[5] = hash[4];
 
 	FreeBuf(b);
 }
