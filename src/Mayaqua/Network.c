@@ -1,80 +1,71 @@
 // SoftEther VPN Source Code - Stable Edition Repository
 // Mayaqua Kernel
 // 
-// SoftEther VPN Server, Client and Bridge are free software under GPLv2.
+// SoftEther VPN Server, Client and Bridge are free software under the Apache License, Version 2.0.
 // 
 // Copyright (c) Daiyuu Nobori.
 // Copyright (c) SoftEther VPN Project, University of Tsukuba, Japan.
 // Copyright (c) SoftEther Corporation.
+// Copyright (c) all contributors on SoftEther VPN project in GitHub.
 // 
 // All Rights Reserved.
 // 
 // http://www.softether.org/
 // 
-// Author: Daiyuu Nobori, Ph.D.
+// This stable branch is officially managed by Daiyuu Nobori, the owner of SoftEther VPN Project.
+// Pull requests should be sent to the Developer Edition Master Repository on https://github.com/SoftEtherVPN/SoftEtherVPN
 // Contributors:
 // - nattoheaven (https://github.com/nattoheaven)
-// Comments: Tetsuo Sugiyama, Ph.D.
 // 
-// This program is free software; you can redistribute it and/or
-// modify it under the terms of the GNU General Public License
-// version 2 as published by the Free Software Foundation.
+// License: The Apache License, Version 2.0
+// https://www.apache.org/licenses/LICENSE-2.0
 // 
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-// GNU General Public License for more details.
+// DISCLAIMER
+// ==========
 // 
-// You should have received a copy of the GNU General Public License version 2
-// along with this program; if not, write to the Free Software
-// Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 // 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-// CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// THIS SOFTWARE IS DEVELOPED IN JAPAN, AND DISTRIBUTED FROM JAPAN, UNDER
+// JAPANESE LAWS. YOU MUST AGREE IN ADVANCE TO USE, COPY, MODIFY, MERGE, PUBLISH,
+// DISTRIBUTE, SUBLICENSE, AND/OR SELL COPIES OF THIS SOFTWARE, THAT ANY
+// JURIDICAL DISPUTES WHICH ARE CONCERNED TO THIS SOFTWARE OR ITS CONTENTS,
+// AGAINST US (SOFTETHER PROJECT, SOFTETHER CORPORATION, DAIYUU NOBORI OR OTHER
+// SUPPLIERS), OR ANY JURIDICAL DISPUTES AGAINST US WHICH ARE CAUSED BY ANY KIND
+// OF USING, COPYING, MODIFYING, MERGING, PUBLISHING, DISTRIBUTING, SUBLICENSING,
+// AND/OR SELLING COPIES OF THIS SOFTWARE SHALL BE REGARDED AS BE CONSTRUED AND
+// CONTROLLED BY JAPANESE LAWS, AND YOU MUST FURTHER CONSENT TO EXCLUSIVE
+// JURISDICTION AND VENUE IN THE COURTS SITTING IN TOKYO, JAPAN. YOU MUST WAIVE
+// ALL DEFENSES OF LACK OF PERSONAL JURISDICTION AND FORUM NON CONVENIENS.
+// PROCESS MAY BE SERVED ON EITHER PARTY IN THE MANNER AUTHORIZED BY APPLICABLE
+// LAW OR COURT RULE.
 // 
-// THE LICENSE AGREEMENT IS ATTACHED ON THE SOURCE-CODE PACKAGE
-// AS "LICENSE.TXT" FILE. READ THE TEXT FILE IN ADVANCE TO USE THE SOFTWARE.
+// USE ONLY IN JAPAN. DO NOT USE THIS SOFTWARE IN ANOTHER COUNTRY UNLESS YOU HAVE
+// A CONFIRMATION THAT THIS SOFTWARE DOES NOT VIOLATE ANY CRIMINAL LAWS OR CIVIL
+// RIGHTS IN THAT PARTICULAR COUNTRY. USING THIS SOFTWARE IN OTHER COUNTRIES IS
+// COMPLETELY AT YOUR OWN RISK. THE SOFTETHER VPN PROJECT HAS DEVELOPED AND
+// DISTRIBUTED THIS SOFTWARE TO COMPLY ONLY WITH THE JAPANESE LAWS AND EXISTING
+// CIVIL RIGHTS INCLUDING PATENTS WHICH ARE SUBJECTS APPLY IN JAPAN. OTHER
+// COUNTRIES' LAWS OR CIVIL RIGHTS ARE NONE OF OUR CONCERNS NOR RESPONSIBILITIES.
+// WE HAVE NEVER INVESTIGATED ANY CRIMINAL REGULATIONS, CIVIL LAWS OR
+// INTELLECTUAL PROPERTY RIGHTS INCLUDING PATENTS IN ANY OF OTHER 200+ COUNTRIES
+// AND TERRITORIES. BY NATURE, THERE ARE 200+ REGIONS IN THE WORLD, WITH
+// DIFFERENT LAWS. IT IS IMPOSSIBLE TO VERIFY EVERY COUNTRIES' LAWS, REGULATIONS
+// AND CIVIL RIGHTS TO MAKE THE SOFTWARE COMPLY WITH ALL COUNTRIES' LAWS BY THE
+// PROJECT. EVEN IF YOU WILL BE SUED BY A PRIVATE ENTITY OR BE DAMAGED BY A
+// PUBLIC SERVANT IN YOUR COUNTRY, THE DEVELOPERS OF THIS SOFTWARE WILL NEVER BE
+// LIABLE TO RECOVER OR COMPENSATE SUCH DAMAGES, CRIMINAL OR CIVIL
+// RESPONSIBILITIES. NOTE THAT THIS LINE IS NOT LICENSE RESTRICTION BUT JUST A
+// STATEMENT FOR WARNING AND DISCLAIMER.
 // 
-// 
-// THIS SOFTWARE IS DEVELOPED IN JAPAN, AND DISTRIBUTED FROM JAPAN,
-// UNDER JAPANESE LAWS. YOU MUST AGREE IN ADVANCE TO USE, COPY, MODIFY,
-// MERGE, PUBLISH, DISTRIBUTE, SUBLICENSE, AND/OR SELL COPIES OF THIS
-// SOFTWARE, THAT ANY JURIDICAL DISPUTES WHICH ARE CONCERNED TO THIS
-// SOFTWARE OR ITS CONTENTS, AGAINST US (SOFTETHER PROJECT, SOFTETHER
-// CORPORATION, DAIYUU NOBORI OR OTHER SUPPLIERS), OR ANY JURIDICAL
-// DISPUTES AGAINST US WHICH ARE CAUSED BY ANY KIND OF USING, COPYING,
-// MODIFYING, MERGING, PUBLISHING, DISTRIBUTING, SUBLICENSING, AND/OR
-// SELLING COPIES OF THIS SOFTWARE SHALL BE REGARDED AS BE CONSTRUED AND
-// CONTROLLED BY JAPANESE LAWS, AND YOU MUST FURTHER CONSENT TO
-// EXCLUSIVE JURISDICTION AND VENUE IN THE COURTS SITTING IN TOKYO,
-// JAPAN. YOU MUST WAIVE ALL DEFENSES OF LACK OF PERSONAL JURISDICTION
-// AND FORUM NON CONVENIENS. PROCESS MAY BE SERVED ON EITHER PARTY IN
-// THE MANNER AUTHORIZED BY APPLICABLE LAW OR COURT RULE.
-// 
-// USE ONLY IN JAPAN. DO NOT USE THIS SOFTWARE IN ANOTHER COUNTRY UNLESS
-// YOU HAVE A CONFIRMATION THAT THIS SOFTWARE DOES NOT VIOLATE ANY
-// CRIMINAL LAWS OR CIVIL RIGHTS IN THAT PARTICULAR COUNTRY. USING THIS
-// SOFTWARE IN OTHER COUNTRIES IS COMPLETELY AT YOUR OWN RISK. THE
-// SOFTETHER VPN PROJECT HAS DEVELOPED AND DISTRIBUTED THIS SOFTWARE TO
-// COMPLY ONLY WITH THE JAPANESE LAWS AND EXISTING CIVIL RIGHTS INCLUDING
-// PATENTS WHICH ARE SUBJECTS APPLY IN JAPAN. OTHER COUNTRIES' LAWS OR
-// CIVIL RIGHTS ARE NONE OF OUR CONCERNS NOR RESPONSIBILITIES. WE HAVE
-// NEVER INVESTIGATED ANY CRIMINAL REGULATIONS, CIVIL LAWS OR
-// INTELLECTUAL PROPERTY RIGHTS INCLUDING PATENTS IN ANY OF OTHER 200+
-// COUNTRIES AND TERRITORIES. BY NATURE, THERE ARE 200+ REGIONS IN THE
-// WORLD, WITH DIFFERENT LAWS. IT IS IMPOSSIBLE TO VERIFY EVERY
-// COUNTRIES' LAWS, REGULATIONS AND CIVIL RIGHTS TO MAKE THE SOFTWARE
-// COMPLY WITH ALL COUNTRIES' LAWS BY THE PROJECT. EVEN IF YOU WILL BE
-// SUED BY A PRIVATE ENTITY OR BE DAMAGED BY A PUBLIC SERVANT IN YOUR
-// COUNTRY, THE DEVELOPERS OF THIS SOFTWARE WILL NEVER BE LIABLE TO
-// RECOVER OR COMPENSATE SUCH DAMAGES, CRIMINAL OR CIVIL
-// RESPONSIBILITIES. NOTE THAT THIS LINE IS NOT LICENSE RESTRICTION BUT
-// JUST A STATEMENT FOR WARNING AND DISCLAIMER.
+// READ AND UNDERSTAND THE 'WARNING.TXT' FILE BEFORE USING THIS SOFTWARE.
+// SOME SOFTWARE PROGRAMS FROM THIRD PARTIES ARE INCLUDED ON THIS SOFTWARE WITH
+// LICENSE CONDITIONS WHICH ARE DESCRIBED ON THE 'THIRD_PARTY.TXT' FILE.
 // 
 // 
 // SOURCE CODE CONTRIBUTION
@@ -2660,70 +2651,128 @@ void RUDPBulkSend(RUDP_STACK *r, RUDP_SESSION *se, void *data, UINT data_size)
 	UCHAR crypt_key_src[SHA1_SIZE * 2];
 	UCHAR crypt_key[SHA1_SIZE];
 	UINT icmp_type;
-	UCHAR sign[SHA1_SIZE];
-	UCHAR iv[SHA1_SIZE + 1];
 	// Validate arguments
 	if (r == NULL || se == NULL || (data == NULL && data_size != 0))
 	{
 		return;
 	}
 
-	padding_size = Rand32() % 31 + 1;
-
-	buf_size = SHA1_SIZE + SHA1_SIZE + sizeof(UINT64) + data_size + padding_size;
-	buf = Malloc(buf_size);
-
-	// SEQ NO
-	WRITE_UINT64(buf + SHA1_SIZE + SHA1_SIZE, se->BulkNextSeqNo);
-	se->BulkNextSeqNo++;
-
-	// Data
-	Copy(buf + SHA1_SIZE + SHA1_SIZE + sizeof(UINT64), data, data_size);
-
-	// Padding
-	for (i = 0;i < padding_size;i++)
+	if (se->BulkSendKey->Size == RUDP_BULK_KEY_SIZE_V2)
 	{
-		buf[SHA1_SIZE + SHA1_SIZE + sizeof(UINT64) + data_size + i] = (UCHAR)padding_size;
-	}
+		// Ver 2
+		UCHAR iv[RUDP_BULK_IV_SIZE_V2];
 
-	// Encryption
-	Copy(iv, se->BulkNextIv, SHA1_SIZE);
-	Copy(crypt_key_src + 0, se->BulkSendKey->Data, SHA1_SIZE);
-	Copy(crypt_key_src + SHA1_SIZE, iv, SHA1_SIZE);
-	HashSha1(crypt_key, crypt_key_src, SHA1_SIZE * 2);
-	c = NewCrypt(crypt_key, sizeof(crypt_key));
-	Encrypt(c, buf + SHA1_SIZE + SHA1_SIZE, buf + SHA1_SIZE + SHA1_SIZE, sizeof(UINT64) + data_size + padding_size);
-	FreeCrypt(c);
+		padding_size = Rand32() % 31 + 1;
 
-	// IV
-	Copy(buf + SHA1_SIZE, iv, SHA1_SIZE);
+		// Packet: IV + Encrypted(SEQ_NO + Data + padding) + MAC
+		buf_size = RUDP_BULK_IV_SIZE_V2 + sizeof(UINT64) + data_size + padding_size + RUDP_BULK_MAC_SIZE_V2;
+		buf = Malloc(buf_size);
 
-	// Sign
-	if (se->UseHMac == false)
-	{
-		Copy(buf + 0, se->BulkSendKey->Data, SHA1_SIZE);
-		HashSha1(sign, buf, SHA1_SIZE + SHA1_SIZE + sizeof(UINT64) + data_size + padding_size);
-		Copy(buf + 0, sign, SHA1_SIZE);
+		// IV
+		Copy(iv, se->BulkNextIv_V2, RUDP_BULK_IV_SIZE_V2);
+		Copy(buf, iv, RUDP_BULK_IV_SIZE_V2);
+
+		// SEQ NO
+		WRITE_UINT64(buf + RUDP_BULK_IV_SIZE_V2, se->BulkNextSeqNo);
+		se->BulkNextSeqNo++;
+
+		// Data
+		Copy(buf + RUDP_BULK_IV_SIZE_V2 + sizeof(UINT64), data, data_size);
+
+		// Padding
+		for (i = 0;i < padding_size;i++)
+		{
+			buf[RUDP_BULK_IV_SIZE_V2 + sizeof(UINT64) + data_size + i] = (UCHAR)padding_size;
+		}
+
+		// Encryption
+		Aead_ChaCha20Poly1305_Ietf_Encrypt(buf + RUDP_BULK_IV_SIZE_V2,
+			buf + RUDP_BULK_IV_SIZE_V2,
+			sizeof(UINT64) + data_size + padding_size,
+			se->BulkSendKey->Data,
+			iv,
+			NULL,
+			0);
+
+		// Next IV
+		Copy(se->BulkNextIv_V2, buf + RUDP_BULK_IV_SIZE_V2 + sizeof(UINT64) + data_size + padding_size - RUDP_BULK_IV_SIZE_V2,
+			RUDP_BULK_IV_SIZE_V2);
+
+		if (r->Protocol == RUDP_PROTOCOL_ICMP)
+		{
+			icmp_type = se->Icmp_Type;
+		}
+		else if (r->Protocol == RUDP_PROTOCOL_DNS)
+		{
+			icmp_type = se->Dns_TranId;
+		}
+		RUDPSendPacket(r, &se->YourIp, se->YourPort, buf, buf_size, icmp_type);
+
+		Free(buf);
 	}
 	else
 	{
-		HMacSha1(buf + 0, se->BulkSendKey->Data, SHA1_SIZE, buf + SHA1_SIZE, SHA1_SIZE + sizeof(UINT64) + data_size + padding_size);
-	}
+		UCHAR sign[SHA1_SIZE];
+		UCHAR iv[SHA1_SIZE];
 
-	// Next IV
-	Copy(se->BulkNextIv, buf + buf_size - SHA1_SIZE, SHA1_SIZE);
+		// Ver 1
+		padding_size = Rand32() % 31 + 1;
 
-	if (r->Protocol == RUDP_PROTOCOL_ICMP)
-	{
-		icmp_type = se->Icmp_Type;
-	}
-	else if (r->Protocol == RUDP_PROTOCOL_DNS)
-	{
-		icmp_type = se->Dns_TranId;
-	}
-	RUDPSendPacket(r, &se->YourIp, se->YourPort, buf, buf_size, icmp_type);
+		buf_size = SHA1_SIZE + SHA1_SIZE + sizeof(UINT64) + data_size + padding_size;
+		buf = Malloc(buf_size);
 
-	Free(buf);
+		// SEQ NO
+		WRITE_UINT64(buf + SHA1_SIZE + SHA1_SIZE, se->BulkNextSeqNo);
+		se->BulkNextSeqNo++;
+
+		// Data
+		Copy(buf + SHA1_SIZE + SHA1_SIZE + sizeof(UINT64), data, data_size);
+
+		// Padding
+		for (i = 0;i < padding_size;i++)
+		{
+			buf[SHA1_SIZE + SHA1_SIZE + sizeof(UINT64) + data_size + i] = (UCHAR)padding_size;
+		}
+
+		// Encryption
+		Copy(iv, se->BulkNextIv, SHA1_SIZE);
+		Copy(crypt_key_src + 0, se->BulkSendKey->Data, SHA1_SIZE);
+		Copy(crypt_key_src + SHA1_SIZE, iv, SHA1_SIZE);
+		HashSha1(crypt_key, crypt_key_src, SHA1_SIZE * 2);
+		c = NewCrypt(crypt_key, sizeof(crypt_key));
+		Encrypt(c, buf + SHA1_SIZE + SHA1_SIZE, buf + SHA1_SIZE + SHA1_SIZE, sizeof(UINT64) + data_size + padding_size);
+		FreeCrypt(c);
+
+		// IV
+		Copy(buf + SHA1_SIZE, iv, SHA1_SIZE);
+
+		// Sign
+		if (se->UseHMac == false)
+		{
+			Copy(buf + 0, se->BulkSendKey->Data, SHA1_SIZE);
+			HashSha1(sign, buf, SHA1_SIZE + SHA1_SIZE + sizeof(UINT64) + data_size + padding_size);
+			Copy(buf + 0, sign, SHA1_SIZE);
+		}
+		else
+		{
+			HMacSha1(buf + 0, se->BulkSendKey->Data, SHA1_SIZE, buf + SHA1_SIZE, SHA1_SIZE + sizeof(UINT64) + data_size + padding_size);
+		}
+
+		// Next IV
+		Copy(se->BulkNextIv, buf + buf_size - SHA1_SIZE, SHA1_SIZE);
+
+		if (r->Protocol == RUDP_PROTOCOL_ICMP)
+		{
+			icmp_type = se->Icmp_Type;
+		}
+		else if (r->Protocol == RUDP_PROTOCOL_DNS)
+		{
+			icmp_type = se->Dns_TranId;
+		}
+		RUDPSendPacket(r, &se->YourIp, se->YourPort, buf, buf_size, icmp_type);
+
+		Free(buf);
+	}
 }
 
 // Start a socket for R-UDP Listening
@@ -2784,14 +2833,20 @@ SOCK *AcceptRUDP(SOCK *s)
 			{
 			case RUDP_PROTOCOL_UDP:
 				StrCpy(ret->UnderlayProtocol, sizeof(ret->UnderlayProtocol), SOCK_UNDERLAY_NAT_T);
+				AddProtocolDetailsStr(ret->ProtocolDetails, sizeof(ret->ProtocolDetails),
+					"RUDP/UDP");
 				break;
 
 			case RUDP_PROTOCOL_DNS:
 				StrCpy(ret->UnderlayProtocol, sizeof(ret->UnderlayProtocol), SOCK_UNDERLAY_DNS);
+				AddProtocolDetailsStr(ret->ProtocolDetails, sizeof(ret->ProtocolDetails),
+					"RUDP/DNS");
 				break;
 
 			case RUDP_PROTOCOL_ICMP:
 				StrCpy(ret->UnderlayProtocol, sizeof(ret->UnderlayProtocol), SOCK_UNDERLAY_ICMP);
+				AddProtocolDetailsStr(ret->ProtocolDetails, sizeof(ret->ProtocolDetails),
+					"RUDP/ICMP");
 				break;
 			}
 
@@ -2844,24 +2899,53 @@ bool RUDPCheckSignOfRecvPacket(RUDP_STACK *r, RUDP_SESSION *se, void *recv_data,
 	}
 
 	// Verification signature (bulk packet)
-	if (se->UseHMac == false)
+	if (se->BulkRecvKey->Size == RUDP_BULK_KEY_SIZE_V2)
 	{
-		Copy(sign, p, SHA1_SIZE);
-		Copy(p, se->BulkRecvKey->Data, SHA1_SIZE);
-		HashSha1(sign2, p, recv_size);
-		Copy(p, sign, SHA1_SIZE);
-
-		if (Cmp(sign, sign2, SHA1_SIZE) == 0)
+		// Ver 2
+		UCHAR *iv = p;
+		// Packet: IV + Encrypted(SEQ_NO + Data + padding) + MAC
+		// IV
+		if (size < RUDP_BULK_IV_SIZE_V2)
 		{
+			return false;
+		}
+		iv = p;
+		p += RUDP_BULK_IV_SIZE_V2;
+		size -= RUDP_BULK_IV_SIZE_V2;
+
+		// Decrypt
+		if (size < (RUDP_BULK_MAC_SIZE_V2 + 1))
+		{
+			return false;
+		}
+		if (Aead_ChaCha20Poly1305_Ietf_Decrypt(r->TmpBuf, p, size, se->BulkRecvKey->Data, iv, NULL, 0) == false)
+		{
+			return false;
+		}
+		return true;
+	}
+	else
+	{
+		// Ver 1
+		if (se->UseHMac == false)
+		{
+			Copy(sign, p, SHA1_SIZE);
+			Copy(p, se->BulkRecvKey->Data, SHA1_SIZE);
+			HashSha1(sign2, p, recv_size);
+			Copy(p, sign, SHA1_SIZE);
+
+			if (Cmp(sign, sign2, SHA1_SIZE) == 0)
+			{
+				return true;
+			}
+		}
+
+		HMacSha1(sign2, se->BulkRecvKey->Data, SHA1_SIZE, p + SHA1_SIZE, size - SHA1_SIZE);
+		if (Cmp(p, sign2, SHA1_SIZE) == 0)
+		{
+			se->UseHMac = true;
 			return true;
 		}
-	}
-
-	HMacSha1(sign2, se->BulkRecvKey->Data, SHA1_SIZE, p + SHA1_SIZE, size - SHA1_SIZE);
-	if (Cmp(p, sign2, SHA1_SIZE) == 0)
-	{
-		se->UseHMac = true;
-		return true;
 	}
 
 	return false;
@@ -2895,15 +2979,76 @@ bool RUDPProcessBulkRecvPacket(RUDP_STACK *r, RUDP_SESSION *se, void *recv_data,
 		return false;
 	}
 
-	// Validate the signature
-	if (se->UseHMac == false)
+	if (se->BulkRecvKey->Size == RUDP_BULK_KEY_SIZE_V2)
 	{
-		Copy(sign, p, SHA1_SIZE);
-		Copy(p, se->BulkRecvKey->Data, SHA1_SIZE);
-		HashSha1(sign2, p, recv_size);
-		Copy(p, sign, SHA1_SIZE);
+		// Ver 2
+		// Packet: IV + Encrypted(SEQ_NO + Data + padding) + MAC
+		// IV
+		if (size < RUDP_BULK_IV_SIZE_V2)
+		{
+			WHERE;
+			return false;
+		}
+		iv = p;
+		p += RUDP_BULK_IV_SIZE_V2;
+		size -= RUDP_BULK_IV_SIZE_V2;
 
-		if (Cmp(sign, sign2, SHA1_SIZE) != 0)
+		// Decrypt
+		if (size < (RUDP_BULK_MAC_SIZE_V2 + 1))
+		{
+			WHERE;
+			return false;
+		}
+		if (Aead_ChaCha20Poly1305_Ietf_Decrypt(p, p, size, se->BulkRecvKey->Data, iv, NULL, 0) == false)
+		{
+			WHERE;
+			return false;
+		}
+
+		size -= RUDP_BULK_MAC_SIZE_V2;
+
+		// padlen
+		padlen = p[size - 1];
+		if (padlen == 0)
+		{
+			WHERE;
+			return false;
+		}
+		if (size < padlen)
+		{
+			WHERE;
+			return false;
+		}
+		size -= padlen;
+	}
+	else
+	{
+		// Validate the signature
+		if (se->UseHMac == false)
+		{
+			Copy(sign, p, SHA1_SIZE);
+			Copy(p, se->BulkRecvKey->Data, SHA1_SIZE);
+			HashSha1(sign2, p, recv_size);
+			Copy(p, sign, SHA1_SIZE);
+
+			if (Cmp(sign, sign2, SHA1_SIZE) != 0)
+			{
+				HMacSha1(sign2, se->BulkRecvKey->Data, SHA1_SIZE, p + SHA1_SIZE, recv_size - SHA1_SIZE);
+
+				if (Cmp(p, sign2, SHA1_SIZE) != 0)
+				{
+					return false;
+				}
+				else
+				{
+					se->UseHMac = true;
+				}
+			}
+			else
+			{
+			}
+		}
+		else
 		{
 			HMacSha1(sign2, se->BulkRecvKey->Data, SHA1_SIZE, p + SHA1_SIZE, recv_size - SHA1_SIZE);
 
@@ -2911,61 +3056,45 @@ bool RUDPProcessBulkRecvPacket(RUDP_STACK *r, RUDP_SESSION *se, void *recv_data,
 			{
 				return false;
 			}
-			else
-			{
-				se->UseHMac = true;
-			}
 		}
-		else
-		{
-		}
-	}
-	else
-	{
-		HMacSha1(sign2, se->BulkRecvKey->Data, SHA1_SIZE, p + SHA1_SIZE, recv_size - SHA1_SIZE);
 
-		if (Cmp(p, sign2, SHA1_SIZE) != 0)
+		p += SHA1_SIZE;
+		size -= SHA1_SIZE;
+
+		// IV
+		if (size < SHA1_SIZE)
 		{
 			return false;
 		}
-	}
+		iv = p;
+		p += SHA1_SIZE;
+		size -= SHA1_SIZE;
 
-	p += SHA1_SIZE;
-	size -= SHA1_SIZE;
+		// Decrypt
+		if (size < 1)
+		{
+			return false;
+		}
+		Copy(keygen + 0, se->BulkRecvKey->Data, SHA1_SIZE);
+		Copy(keygen + SHA1_SIZE, iv, SHA1_SIZE);
+		HashSha1(key, keygen, sizeof(keygen));
 
-	// IV
-	if (size < SHA1_SIZE)
-	{
-		return false;
-	}
-	iv = p;
-	p += SHA1_SIZE;
-	size -= SHA1_SIZE;
+		c = NewCrypt(key, sizeof(key));
+		Encrypt(c, p, p, size);
+		FreeCrypt(c);
 
-	// Decrypt
-	if (size < 1)
-	{
-		return false;
+		// padlen
+		padlen = p[size - 1];
+		if (padlen == 0)
+		{
+			return false;
+		}
+		if (size < padlen)
+		{
+			return false;
+		}
+		size -= padlen;
 	}
-	Copy(keygen + 0, se->BulkRecvKey->Data, SHA1_SIZE);
-	Copy(keygen + SHA1_SIZE, iv, SHA1_SIZE);
-	HashSha1(key, keygen, sizeof(keygen));
-
-	c = NewCrypt(key, sizeof(key));
-	Encrypt(c, p, p, size);
-	FreeCrypt(c);
-
-	// padlen
-	padlen = p[size - 1];
-	if (padlen == 0)
-	{
-		return false;
-	}
-	if (size < padlen)
-	{
-		return false;
-	}
-	size -= padlen;
 
 	// SEQ NO
 	seq_no = READ_UINT64(p);
@@ -3778,8 +3907,8 @@ RUDP_SESSION *RUDPNewSession(bool server_mode, IP *my_ip, UINT my_port, IP *your
 	RUDP_SESSION *se;
 	UCHAR key1[SHA1_SIZE];
 	UCHAR key2[SHA1_SIZE];
-	UCHAR bulk_send_key[SHA1_SIZE];
-	UCHAR bulk_recv_key[SHA1_SIZE];
+	UCHAR bulk_send_key[RUDP_BULK_KEY_SIZE_MAX];
+	UCHAR bulk_recv_key[RUDP_BULK_KEY_SIZE_MAX];
 	BUF *b;
 
 	se = ZeroMalloc(sizeof(RUDP_SESSION));
@@ -3865,6 +3994,8 @@ RUDP_SESSION *RUDPNewSession(bool server_mode, IP *my_ip, UINT my_port, IP *your
 	se->BulkRecvKey = NewSharedBuffer(bulk_recv_key, sizeof(bulk_recv_key));
 
 	Rand(se->BulkNextIv, sizeof(se->BulkNextIv));
+	Rand(se->BulkNextIv_V2, sizeof(se->BulkNextIv_V2));
+
 	se->BulkNextSeqNo = 1;
 
 	return se;
@@ -5815,8 +5946,57 @@ int cb_test(int a, X509_STORE_CTX *ctx)
 	return 1;
 }
 
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#define X509_STORE_CTX_get0_cert(o) ((o)->cert)
+#endif
+
+// Verify client SSL certificate during TLS handshake.
+//
+// (actually, only save the certificate for later authentication in Protocol.c)
+int SslCertVerifyCallback(int preverify_ok, X509_STORE_CTX *ctx)
+{
+	SSL *ssl;
+	struct SslClientCertInfo *clientcert;
+	X509 *cert;
+
+	ssl = X509_STORE_CTX_get_ex_data(ctx, SSL_get_ex_data_X509_STORE_CTX_idx());
+	clientcert = SSL_get_ex_data(ssl, GetSslClientCertIndex());
+
+	if (clientcert != NULL)
+	{
+		clientcert->PreverifyErr = X509_STORE_CTX_get_error(ctx);
+		clientcert->PreverifyErrMessage[0] = '\0';
+		if (!preverify_ok)
+		{
+			const char *msg = X509_verify_cert_error_string(clientcert->PreverifyErr);
+			StrCpy(clientcert->PreverifyErrMessage, PREVERIFY_ERR_MESSAGE_SIZE, (char *)msg);
+			Debug("SslCertVerifyCallback preverify error: '%s'\n", msg);
+		}
+		else
+		{
+			cert = X509_STORE_CTX_get0_cert(ctx);
+			if (cert != NULL)
+			{
+				X *tmpX = X509ToX(cert); // this only wraps cert, but we need to make a copy
+				X *copyX = CloneX(tmpX);
+				tmpX->do_not_free = true; // do not release inner X509 object
+				FreeX(tmpX);
+				clientcert->X = copyX;
+			}
+		}
+	}
+
+	return 1; /* allow the verification process to continue */
+}
+
 // Create a new SSL pipe
 SSL_PIPE *NewSslPipe(bool server_mode, X *x, K *k, DH_CTX *dh)
+{
+	return NewSslPipeEx(server_mode, x, k, dh, false, NULL);
+}
+
+// Create a new SSL pipe with extended options
+SSL_PIPE *NewSslPipeEx(bool server_mode, X *x, K *k, DH_CTX *dh, bool verify_peer, struct SslClientCertInfo *clientcert)
 {
 	SSL_PIPE *s;
 	SSL *ssl;
@@ -5841,7 +6021,10 @@ SSL_PIPE *NewSslPipe(bool server_mode, X *x, K *k, DH_CTX *dh)
 			SSL_CTX_set_ssl_version(ssl_ctx, SSLv23_client_method());
 		}
 
-		//SSL_CTX_set_verify(ssl_ctx, SSL_VERIFY_PEER, cb_test);
+		if (verify_peer)
+		{
+			SSL_CTX_set_verify(ssl_ctx, SSL_VERIFY_PEER, SslCertVerifyCallback);
+		}
 
 		if (dh != NULL)
 		{
@@ -5854,6 +6037,8 @@ SSL_PIPE *NewSslPipe(bool server_mode, X *x, K *k, DH_CTX *dh)
 		}
 
 		ssl = SSL_new(ssl_ctx);
+
+		SSL_set_ex_data(ssl, GetSslClientCertIndex(), clientcert);
 	}
 	Unlock(openssl_lock);
 
@@ -12663,6 +12848,50 @@ void InitSockSet(SOCKSET *set)
 	Zero(set, sizeof(SOCKSET));
 }
 
+// Receive data and discard all of them
+bool RecvAllWithDiscard(SOCK *sock, UINT size, bool secure)
+{
+	static UCHAR buffer[4096];
+	UINT recv_size, sz, ret;
+	if (sock == NULL)
+	{
+		return false;
+	}
+	if (size == 0)
+	{
+		return true;
+	}
+	if (sock->AsyncMode)
+	{
+		return false;
+	}
+
+	recv_size = 0;
+
+	while (true)
+	{
+		sz = MIN(size - recv_size, sizeof(buffer));
+		ret = Recv(sock, buffer, sz, secure);
+		if (ret == 0)
+		{
+			return false;
+		}
+		if (ret == SOCK_LATER)
+		{
+			// I suppose that this is safe because the RecvAll() function is used only 
+			// if the sock->AsyncMode == true. And the Recv() function may return
+			// SOCK_LATER only if the sock->AsyncMode == false. Therefore the call of 
+			// Recv() function in the RecvAll() function never returns SOCK_LATER.
+			return false;
+		}
+		recv_size += ret;
+		if (recv_size >= size)
+		{
+			return true;
+		}
+	}
+}
+
 // Receive all by TCP
 bool RecvAll(SOCK *sock, void *data, UINT size, bool secure)
 {
@@ -12781,7 +13010,7 @@ bool SendAll(SOCK *sock, void *data, UINT size, bool secure)
 // Set the cipher algorithm name to want to use
 void SetWantToUseCipher(SOCK *sock, char *name)
 {
-	char tmp[1024];
+	char tmp[2048];
 	// Validate arguments
 	if (sock == NULL || name == NULL)
 	{
@@ -14033,6 +14262,8 @@ SOCK *Accept(SOCK *sock)
 
 	StrCpy(ret->UnderlayProtocol, sizeof(ret->UnderlayProtocol), SOCK_UNDERLAY_NATIVE_V4);
 
+	AddProtocolDetailsStr(ret->ProtocolDetails, sizeof(ret->ProtocolDetails), "IPv4");
+
 	return ret;
 }
 
@@ -14142,6 +14373,8 @@ SOCK *Accept6(SOCK *sock)
 	}
 
 	StrCpy(ret->UnderlayProtocol, sizeof(ret->UnderlayProtocol), SOCK_UNDERLAY_NATIVE_V6);
+
+	AddProtocolDetailsStr(ret->ProtocolDetails, sizeof(ret->ProtocolDetails), "IPv6");
 
 	return ret;
 }
@@ -15381,6 +15614,8 @@ SOCK *ConnectEx4(char *hostname, UINT port, UINT timeout, bool *cancel_flag, cha
 			if (nat_t_sock != NULL)
 			{
 				StrCpy(nat_t_sock->UnderlayProtocol, sizeof(nat_t_sock->UnderlayProtocol), SOCK_UNDERLAY_NAT_T);
+				AddProtocolDetailsStr(nat_t_sock->ProtocolDetails, sizeof(nat_t_sock->ProtocolDetails),
+					"RUDP");
 			}
 
 			Copy(ret_ip, &ip4, sizeof(IP));
@@ -15608,6 +15843,8 @@ SOCK *ConnectEx4(char *hostname, UINT port, UINT timeout, bool *cancel_flag, cha
 
 				StrCpy(p2.Result_Nat_T_Sock->UnderlayProtocol, sizeof(p2.Result_Nat_T_Sock->UnderlayProtocol),
 					SOCK_UNDERLAY_NAT_T);
+				AddProtocolDetailsStr(p2.Result_Nat_T_Sock->UnderlayProtocol, sizeof(p2.Result_Nat_T_Sock->UnderlayProtocol),
+					"RUDP/UDP");
 
 				Copy(ret_ip, &ip4, sizeof(IP));
 
@@ -15622,6 +15859,8 @@ SOCK *ConnectEx4(char *hostname, UINT port, UINT timeout, bool *cancel_flag, cha
 
 				StrCpy(p4.Result_Nat_T_Sock->UnderlayProtocol, sizeof(p4.Result_Nat_T_Sock->UnderlayProtocol),
 					SOCK_UNDERLAY_DNS);
+				AddProtocolDetailsStr(p4.Result_Nat_T_Sock->UnderlayProtocol, sizeof(p4.Result_Nat_T_Sock->UnderlayProtocol),
+					"RUDP/DNS");
 
 				Copy(ret_ip, &ip4, sizeof(IP));
 
@@ -15632,6 +15871,8 @@ SOCK *ConnectEx4(char *hostname, UINT port, UINT timeout, bool *cancel_flag, cha
 				// Use this if over ICMP success
 				StrCpy(p3.Result_Nat_T_Sock->UnderlayProtocol, sizeof(p3.Result_Nat_T_Sock->UnderlayProtocol),
 					SOCK_UNDERLAY_ICMP);
+				AddProtocolDetailsStr(p3.Result_Nat_T_Sock->UnderlayProtocol, sizeof(p3.Result_Nat_T_Sock->UnderlayProtocol),
+					"RUDP/ICMP");
 
 				Copy(ret_ip, &ip4, sizeof(IP));
 
@@ -15698,6 +15939,9 @@ SOCK *ConnectEx4(char *hostname, UINT port, UINT timeout, bool *cancel_flag, cha
 	StrCpy(sock->UnderlayProtocol, sizeof(sock->UnderlayProtocol),
 		(is_ipv6 ? SOCK_UNDERLAY_NATIVE_V6 : SOCK_UNDERLAY_NATIVE_V4));
 
+	AddProtocolDetailsStr(sock->ProtocolDetails, sizeof(sock->ProtocolDetails),
+		is_ipv6 ? "IPv6" : "IPv4");
+
 	// Host name resolution
 	if (no_get_hostname || (GetHostName(tmp, sizeof(tmp), &current_ip) == false))
 	{
@@ -15744,6 +15988,75 @@ SOCK *ConnectEx4(char *hostname, UINT port, UINT timeout, bool *cancel_flag, cha
 	sock->IPv6 = is_ipv6;
 
 	return sock;
+}
+
+// Get the current accepting IPv4 address
+void TryGetCurrentAcceptingIPv4Address(IP *ip)
+{
+	SOCK *s = ConnectEx(UDP_NAT_T_GET_PRIVATE_IP_TCP_SERVER, 80, 2000);
+
+	if (s != NULL)
+	{
+		Disconnect(s);
+		ReleaseSock(s);
+	}
+
+	if (GetCurrentGlobalIP(ip, false))
+	{
+		return;
+	}
+
+	GetCurrentGlobalIPGuess(ip, false);
+}
+
+// Add a protocol details strings
+void AddProtocolDetailsStr(char *dst, UINT dst_size, char *str)
+{
+	TOKEN_LIST *t1, *t2;
+	UINT i, j;
+	if (dst == NULL || str == NULL)
+	{
+		return;
+	}
+
+	t1 = ParseTokenWithoutNullStr(dst, " ");
+	t2 = ParseTokenWithoutNullStr(str, " ");
+
+	for (i = 0;i < t2->NumTokens;i++)
+	{
+		bool exists = false;
+		for (j = 0;j < t1->NumTokens;j++)
+		{
+			if (StrCmpi(t1->Token[j], t2->Token[i]) == 0)
+			{
+				exists = true;
+				break;
+			}
+		}
+
+		if (exists == false)
+		{
+			StrCat(dst, dst_size, t2->Token[i]);
+			StrCat(dst, dst_size, " ");
+		}
+	}
+
+	FreeToken(t1);
+	FreeToken(t2);
+}
+void AddProtocolDetailsKeyValueStr(char *dst, UINT dst_size, char *key, char *value)
+{
+	char tmp[128];
+	StrCpy(tmp, sizeof(tmp), key);
+	StrCat(tmp, sizeof(tmp), "=");
+	StrCat(tmp, sizeof(tmp), value);
+	AddProtocolDetailsStr(dst, dst_size, tmp);
+}
+void AddProtocolDetailsKeyValueInt(char *dst, UINT dst_size, char *key, UINT value)
+{
+	char tmp[128];
+	ToStr(tmp, value);
+	AddProtocolDetailsKeyValueStr(dst, dst_size, key, tmp);
 }
 
 // Maximize the I/O buffer size of the socket
@@ -16372,7 +16685,7 @@ void GetMachineNameEx(char *name, UINT size, bool no_load_hosts)
 			{
 				if (GetMachineNameFromHosts(tmp2, sizeof(tmp2)))
 				{
-					StrCpy(name, sizeof(name), tmp2);
+					StrCpy(name, sizeof(name), tmp2); // 2019/02/09 by Dayiuu Nobori: DO NOT fix it! It affects DDNS configs.
 				}
 			}
 		}
@@ -21038,6 +21351,8 @@ SOCK *AcceptReverse(SOCK *s)
 		{
 			StrCpy(ret->UnderlayProtocol, sizeof(ret->UnderlayProtocol), SOCK_UNDERLAY_AZURE);
 
+			AddProtocolDetailsStr(ret->ProtocolDetails, sizeof(ret->ProtocolDetails), "VPNAzure");
+
 			return ret;
 		}
 
@@ -21085,6 +21400,8 @@ SOCK *AcceptInProc(SOCK *s)
 		if (ret != NULL)
 		{
 			StrCpy(ret->UnderlayProtocol, sizeof(ret->UnderlayProtocol), SOCK_UNDERLAY_INPROC);
+
+			AddProtocolDetailsStr(ret->ProtocolDetails, sizeof(ret->ProtocolDetails), "InProc");
 
 			return ret;
 		}
@@ -21535,6 +21852,10 @@ void FlushTubeFlushList(TUBE_FLUSH_LIST *f)
 // The server receives a PACK from the client
 PACK *HttpServerRecv(SOCK *s)
 {
+	return HttpServerRecvEx(s, 0);
+}
+PACK *HttpServerRecvEx(SOCK *s, UINT max_data_size)
+{
 	BUF *b;
 	PACK *p;
 	HTTP_HEADER *h;
@@ -21542,6 +21863,7 @@ PACK *HttpServerRecv(SOCK *s)
 	UCHAR *tmp;
 	HTTP_VALUE *v;
 	UINT num_noop = 0;
+	if (max_data_size == 0) max_data_size = HTTP_PACK_MAX_SIZE;
 	// Validate arguments
 	if (s == NULL)
 	{
@@ -21572,7 +21894,7 @@ START:
 	}
 
 	size = GetContentLength(h);
-	if (size == 0 || size > HTTP_PACK_MAX_SIZE)
+	if (size == 0 || (size > max_data_size))
 	{
 		FreeHttpHeader(h);
 		goto BAD_REQUEST;
@@ -21929,6 +22251,35 @@ bool HttpSendNotImplemented(SOCK *s, char *method, char *target, char *version)
 
 	FreeHttpHeader(h);
 	Free(str);
+
+	return ret;
+}
+
+// Sending a HTTP body contents
+bool HttpSendBody(SOCK *s, void *data, UINT size, char *contents_type)
+{
+	HTTP_HEADER *h;
+	char date_str[MAX_SIZE];
+	bool ret;
+	if (s == NULL || (size != 0 && data == NULL))
+	{
+		return false;
+	}
+	if (contents_type == NULL)
+	{
+		contents_type = "application/octet-stream";
+	}
+	// Creating a header
+	h = NewHttpHeader("HTTP/1.1", "200", "OK");
+
+	GetHttpDateStr(date_str, sizeof(date_str), SystemTime64());
+	AddHttpValue(h, NewHttpValue("Date", date_str));
+	AddHttpValue(h, NewHttpValue("Content-Type", contents_type));
+	AddHttpValue(h, NewHttpValue("Cache-Control", "no-cache"));
+
+	ret = PostHttp(s, h, data, size);
+
+	FreeHttpHeader(h);
 
 	return ret;
 }
@@ -22328,11 +22679,6 @@ HTTP_HEADER *RecvHttpHeader(SOCK *s)
 		if (pos == INFINITE)
 		{
 			// The colon does not exist
-			goto LABEL_ERROR;
-		}
-		if ((pos + 1) >= StrLen(str))
-		{
-			// There is no data
 			goto LABEL_ERROR;
 		}
 

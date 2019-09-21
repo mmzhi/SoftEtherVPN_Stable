@@ -1,80 +1,71 @@
 // SoftEther VPN Source Code - Stable Edition Repository
 // Cedar Communication Module
 // 
-// SoftEther VPN Server, Client and Bridge are free software under GPLv2.
+// SoftEther VPN Server, Client and Bridge are free software under the Apache License, Version 2.0.
 // 
 // Copyright (c) Daiyuu Nobori.
 // Copyright (c) SoftEther VPN Project, University of Tsukuba, Japan.
 // Copyright (c) SoftEther Corporation.
+// Copyright (c) all contributors on SoftEther VPN project in GitHub.
 // 
 // All Rights Reserved.
 // 
 // http://www.softether.org/
 // 
-// Author: Daiyuu Nobori, Ph.D.
+// This stable branch is officially managed by Daiyuu Nobori, the owner of SoftEther VPN Project.
+// Pull requests should be sent to the Developer Edition Master Repository on https://github.com/SoftEtherVPN/SoftEtherVPN
 // Contributors:
 // - nattoheaven (https://github.com/nattoheaven)
-// Comments: Tetsuo Sugiyama, Ph.D.
 // 
-// This program is free software; you can redistribute it and/or
-// modify it under the terms of the GNU General Public License
-// version 2 as published by the Free Software Foundation.
+// License: The Apache License, Version 2.0
+// https://www.apache.org/licenses/LICENSE-2.0
 // 
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-// GNU General Public License for more details.
+// DISCLAIMER
+// ==========
 // 
-// You should have received a copy of the GNU General Public License version 2
-// along with this program; if not, write to the Free Software
-// Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 // 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-// CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// THIS SOFTWARE IS DEVELOPED IN JAPAN, AND DISTRIBUTED FROM JAPAN, UNDER
+// JAPANESE LAWS. YOU MUST AGREE IN ADVANCE TO USE, COPY, MODIFY, MERGE, PUBLISH,
+// DISTRIBUTE, SUBLICENSE, AND/OR SELL COPIES OF THIS SOFTWARE, THAT ANY
+// JURIDICAL DISPUTES WHICH ARE CONCERNED TO THIS SOFTWARE OR ITS CONTENTS,
+// AGAINST US (SOFTETHER PROJECT, SOFTETHER CORPORATION, DAIYUU NOBORI OR OTHER
+// SUPPLIERS), OR ANY JURIDICAL DISPUTES AGAINST US WHICH ARE CAUSED BY ANY KIND
+// OF USING, COPYING, MODIFYING, MERGING, PUBLISHING, DISTRIBUTING, SUBLICENSING,
+// AND/OR SELLING COPIES OF THIS SOFTWARE SHALL BE REGARDED AS BE CONSTRUED AND
+// CONTROLLED BY JAPANESE LAWS, AND YOU MUST FURTHER CONSENT TO EXCLUSIVE
+// JURISDICTION AND VENUE IN THE COURTS SITTING IN TOKYO, JAPAN. YOU MUST WAIVE
+// ALL DEFENSES OF LACK OF PERSONAL JURISDICTION AND FORUM NON CONVENIENS.
+// PROCESS MAY BE SERVED ON EITHER PARTY IN THE MANNER AUTHORIZED BY APPLICABLE
+// LAW OR COURT RULE.
 // 
-// THE LICENSE AGREEMENT IS ATTACHED ON THE SOURCE-CODE PACKAGE
-// AS "LICENSE.TXT" FILE. READ THE TEXT FILE IN ADVANCE TO USE THE SOFTWARE.
+// USE ONLY IN JAPAN. DO NOT USE THIS SOFTWARE IN ANOTHER COUNTRY UNLESS YOU HAVE
+// A CONFIRMATION THAT THIS SOFTWARE DOES NOT VIOLATE ANY CRIMINAL LAWS OR CIVIL
+// RIGHTS IN THAT PARTICULAR COUNTRY. USING THIS SOFTWARE IN OTHER COUNTRIES IS
+// COMPLETELY AT YOUR OWN RISK. THE SOFTETHER VPN PROJECT HAS DEVELOPED AND
+// DISTRIBUTED THIS SOFTWARE TO COMPLY ONLY WITH THE JAPANESE LAWS AND EXISTING
+// CIVIL RIGHTS INCLUDING PATENTS WHICH ARE SUBJECTS APPLY IN JAPAN. OTHER
+// COUNTRIES' LAWS OR CIVIL RIGHTS ARE NONE OF OUR CONCERNS NOR RESPONSIBILITIES.
+// WE HAVE NEVER INVESTIGATED ANY CRIMINAL REGULATIONS, CIVIL LAWS OR
+// INTELLECTUAL PROPERTY RIGHTS INCLUDING PATENTS IN ANY OF OTHER 200+ COUNTRIES
+// AND TERRITORIES. BY NATURE, THERE ARE 200+ REGIONS IN THE WORLD, WITH
+// DIFFERENT LAWS. IT IS IMPOSSIBLE TO VERIFY EVERY COUNTRIES' LAWS, REGULATIONS
+// AND CIVIL RIGHTS TO MAKE THE SOFTWARE COMPLY WITH ALL COUNTRIES' LAWS BY THE
+// PROJECT. EVEN IF YOU WILL BE SUED BY A PRIVATE ENTITY OR BE DAMAGED BY A
+// PUBLIC SERVANT IN YOUR COUNTRY, THE DEVELOPERS OF THIS SOFTWARE WILL NEVER BE
+// LIABLE TO RECOVER OR COMPENSATE SUCH DAMAGES, CRIMINAL OR CIVIL
+// RESPONSIBILITIES. NOTE THAT THIS LINE IS NOT LICENSE RESTRICTION BUT JUST A
+// STATEMENT FOR WARNING AND DISCLAIMER.
 // 
-// 
-// THIS SOFTWARE IS DEVELOPED IN JAPAN, AND DISTRIBUTED FROM JAPAN,
-// UNDER JAPANESE LAWS. YOU MUST AGREE IN ADVANCE TO USE, COPY, MODIFY,
-// MERGE, PUBLISH, DISTRIBUTE, SUBLICENSE, AND/OR SELL COPIES OF THIS
-// SOFTWARE, THAT ANY JURIDICAL DISPUTES WHICH ARE CONCERNED TO THIS
-// SOFTWARE OR ITS CONTENTS, AGAINST US (SOFTETHER PROJECT, SOFTETHER
-// CORPORATION, DAIYUU NOBORI OR OTHER SUPPLIERS), OR ANY JURIDICAL
-// DISPUTES AGAINST US WHICH ARE CAUSED BY ANY KIND OF USING, COPYING,
-// MODIFYING, MERGING, PUBLISHING, DISTRIBUTING, SUBLICENSING, AND/OR
-// SELLING COPIES OF THIS SOFTWARE SHALL BE REGARDED AS BE CONSTRUED AND
-// CONTROLLED BY JAPANESE LAWS, AND YOU MUST FURTHER CONSENT TO
-// EXCLUSIVE JURISDICTION AND VENUE IN THE COURTS SITTING IN TOKYO,
-// JAPAN. YOU MUST WAIVE ALL DEFENSES OF LACK OF PERSONAL JURISDICTION
-// AND FORUM NON CONVENIENS. PROCESS MAY BE SERVED ON EITHER PARTY IN
-// THE MANNER AUTHORIZED BY APPLICABLE LAW OR COURT RULE.
-// 
-// USE ONLY IN JAPAN. DO NOT USE THIS SOFTWARE IN ANOTHER COUNTRY UNLESS
-// YOU HAVE A CONFIRMATION THAT THIS SOFTWARE DOES NOT VIOLATE ANY
-// CRIMINAL LAWS OR CIVIL RIGHTS IN THAT PARTICULAR COUNTRY. USING THIS
-// SOFTWARE IN OTHER COUNTRIES IS COMPLETELY AT YOUR OWN RISK. THE
-// SOFTETHER VPN PROJECT HAS DEVELOPED AND DISTRIBUTED THIS SOFTWARE TO
-// COMPLY ONLY WITH THE JAPANESE LAWS AND EXISTING CIVIL RIGHTS INCLUDING
-// PATENTS WHICH ARE SUBJECTS APPLY IN JAPAN. OTHER COUNTRIES' LAWS OR
-// CIVIL RIGHTS ARE NONE OF OUR CONCERNS NOR RESPONSIBILITIES. WE HAVE
-// NEVER INVESTIGATED ANY CRIMINAL REGULATIONS, CIVIL LAWS OR
-// INTELLECTUAL PROPERTY RIGHTS INCLUDING PATENTS IN ANY OF OTHER 200+
-// COUNTRIES AND TERRITORIES. BY NATURE, THERE ARE 200+ REGIONS IN THE
-// WORLD, WITH DIFFERENT LAWS. IT IS IMPOSSIBLE TO VERIFY EVERY
-// COUNTRIES' LAWS, REGULATIONS AND CIVIL RIGHTS TO MAKE THE SOFTWARE
-// COMPLY WITH ALL COUNTRIES' LAWS BY THE PROJECT. EVEN IF YOU WILL BE
-// SUED BY A PRIVATE ENTITY OR BE DAMAGED BY A PUBLIC SERVANT IN YOUR
-// COUNTRY, THE DEVELOPERS OF THIS SOFTWARE WILL NEVER BE LIABLE TO
-// RECOVER OR COMPENSATE SUCH DAMAGES, CRIMINAL OR CIVIL
-// RESPONSIBILITIES. NOTE THAT THIS LINE IS NOT LICENSE RESTRICTION BUT
-// JUST A STATEMENT FOR WARNING AND DISCLAIMER.
+// READ AND UNDERSTAND THE 'WARNING.TXT' FILE BEFORE USING THIS SOFTWARE.
+// SOME SOFTWARE PROGRAMS FROM THIRD PARTIES ARE INCLUDED ON THIS SOFTWARE WITH
+// LICENSE CONDITIONS WHICH ARE DESCRIBED ON THE 'THIRD_PARTY.TXT' FILE.
 // 
 // 
 // SOURCE CODE CONTRIBUTION
@@ -4092,14 +4083,16 @@ void OutRpcClientEnumCa(PACK *p, RPC_CLIENT_ENUM_CA *e)
 
 	PackAddNum(p, "NumItem", e->NumItem);
 
+	PackSetCurrentJsonGroupName(p, "CAList");
 	for (i = 0;i < e->NumItem;i++)
 	{
 		RPC_CLIENT_ENUM_CA_ITEM *item = e->Items[i];
 		PackAddIntEx(p, "Key", item->Key, i, e->NumItem);
 		PackAddUniStrEx(p, "SubjectName", item->SubjectName, i, e->NumItem);
 		PackAddUniStrEx(p, "IssuerName", item->IssuerName, i, e->NumItem);
-		PackAddInt64Ex(p, "Expires", item->Expires, i, e->NumItem);
+		PackAddTime64Ex(p, "Expires", item->Expires, i, e->NumItem);
 	}
+	PackSetCurrentJsonGroupName(p, NULL);
 }
 
 // RPC_GET_ISSUER
@@ -4370,6 +4363,7 @@ void OutRpcClientEnumSecure(PACK *p, RPC_CLIENT_ENUM_SECURE *e)
 
 	PackAddNum(p, "NumItem", e->NumItem);
 
+	PackSetCurrentJsonGroupName(p, "SecureDeviceList");
 	for (i = 0;i < e->NumItem;i++)
 	{
 		RPC_CLIENT_ENUM_SECURE_ITEM *item = e->Items[i];
@@ -4379,6 +4373,7 @@ void OutRpcClientEnumSecure(PACK *p, RPC_CLIENT_ENUM_SECURE *e)
 		PackAddStrEx(p, "DeviceName", item->DeviceName, i, e->NumItem);
 		PackAddStrEx(p, "Manufacturer", item->Manufacturer, i, e->NumItem);
 	}
+	PackSetCurrentJsonGroupName(p, NULL);
 }
 
 // RPC_USE_SECURE
@@ -4462,11 +4457,13 @@ void OutRpcEnumObjectInSecure(PACK *p, RPC_ENUM_OBJECT_IN_SECURE *e)
 	PackAddNum(p, "NumItem", e->NumItem);
 	PackAddInt(p, "hWnd", e->hWnd);
 
+	PackSetCurrentJsonGroupName(p, "ObjectList");
 	for (i = 0;i < e->NumItem;i++)
 	{
 		PackAddStrEx(p, "ItemName", e->ItemName[i], i, e->NumItem);
 		PackAddIntEx(p, "ItemType", e->ItemType[i], i, e->NumItem);
 	}
+	PackSetCurrentJsonGroupName(p, NULL);
 }
 
 // RPC_CLIENT_CREATE_VLAN
@@ -4586,6 +4583,7 @@ void OutRpcClientEnumVLan(PACK *p, RPC_CLIENT_ENUM_VLAN *v)
 
 	PackAddNum(p, "NumItem", v->NumItem);
 
+	PackSetCurrentJsonGroupName(p, "VLanList");
 	for (i = 0;i < v->NumItem;i++)
 	{
 		RPC_CLIENT_ENUM_VLAN_ITEM *item = v->Items[i];
@@ -4595,6 +4593,7 @@ void OutRpcClientEnumVLan(PACK *p, RPC_CLIENT_ENUM_VLAN *v)
 		PackAddStrEx(p, "MacAddress", item->MacAddress, i, v->NumItem);
 		PackAddStrEx(p, "Version", item->Version, i, v->NumItem);
 	}
+	PackSetCurrentJsonGroupName(p, NULL);
 }
 
 // CLIENT_OPTION
@@ -4660,10 +4659,10 @@ void OutRpcClientOption(PACK *p, CLIENT_OPTION *c)
 	PackAddInt(p, "NumRetry", c->NumRetry);
 	PackAddInt(p, "RetryInterval", c->RetryInterval);
 	PackAddInt(p, "MaxConnection", c->MaxConnection);
-	PackAddInt(p, "UseEncrypt", c->UseEncrypt);
-	PackAddInt(p, "UseCompress", c->UseCompress);
-	PackAddInt(p, "HalfConnection", c->HalfConnection);
-	PackAddInt(p, "NoRoutingTracking", c->NoRoutingTracking);
+	PackAddBool(p, "UseEncrypt", c->UseEncrypt);
+	PackAddBool(p, "UseCompress", c->UseCompress);
+	PackAddBool(p, "HalfConnection", c->HalfConnection);
+	PackAddBool(p, "NoRoutingTracking", c->NoRoutingTracking);
 	PackAddInt(p, "AdditionalConnectionInterval", c->AdditionalConnectionInterval);
 	PackAddInt(p, "ConnectionDisconnectSpan", c->ConnectionDisconnectSpan);
 	PackAddBool(p, "HideStatusWindow", c->HideStatusWindow);
@@ -4875,6 +4874,7 @@ void OutRpcClientEnumAccount(PACK *p, RPC_CLIENT_ENUM_ACCOUNT *e)
 
 	PackAddNum(p, "NumItem", e->NumItem);
 
+	PackSetCurrentJsonGroupName(p, "AccountList");
 	for (i = 0;i < e->NumItem;i++)
 	{
 		RPC_CLIENT_ENUM_ACCOUNT_ITEM *item = e->Items[i];
@@ -4890,10 +4890,11 @@ void OutRpcClientEnumAccount(PACK *p, RPC_CLIENT_ENUM_ACCOUNT *e)
 		PackAddBoolEx(p, "Connected", item->Connected, i, e->NumItem);
 		PackAddIntEx(p, "Port", item->Port, i, e->NumItem);
 		PackAddStrEx(p, "HubName", item->HubName, i, e->NumItem);
-		PackAddInt64Ex(p, "CreateDateTime", item->CreateDateTime, i, e->NumItem);
-		PackAddInt64Ex(p, "UpdateDateTime", item->UpdateDateTime, i, e->NumItem);
-		PackAddInt64Ex(p, "LastConnectDateTime", item->LastConnectDateTime, i, e->NumItem);
+		PackAddTime64Ex(p, "CreateDateTime", item->CreateDateTime, i, e->NumItem);
+		PackAddTime64Ex(p, "UpdateDateTime", item->UpdateDateTime, i, e->NumItem);
+		PackAddTime64Ex(p, "LastConnectDateTime", item->LastConnectDateTime, i, e->NumItem);
 	}
+	PackSetCurrentJsonGroupName(p, NULL);
 }
 
 // RPC_CLIENT_DELETE_ACCOUNT
@@ -5007,9 +5008,9 @@ void OutRpcClientGetAccount(PACK *p, RPC_CLIENT_GET_ACCOUNT *c)
 
 	PackAddData(p, "ShortcutKey", c->ShortcutKey, SHA1_SIZE);
 
-	PackAddInt64(p, "CreateDateTime", c->CreateDateTime);
-	PackAddInt64(p, "UpdateDateTime", c->UpdateDateTime);
-	PackAddInt64(p, "LastConnectDateTime", c->LastConnectDateTime);
+	PackAddTime64(p, "CreateDateTime", c->CreateDateTime);
+	PackAddTime64(p, "UpdateDateTime", c->UpdateDateTime);
+	PackAddTime64(p, "LastConnectDateTime", c->LastConnectDateTime);
 }
 
 // RPC_CLIENT_CONNECT
@@ -5112,6 +5113,7 @@ void InRpcClientGetConnectionStatus(RPC_CLIENT_GET_CONNECTION_STATUS *s, PACK *p
 	s->UseCompress = PackGetInt(p, "UseCompress") ? true : false;
 	s->IsRUDPSession = PackGetInt(p, "IsRUDPSession") ? true : false;
 	PackGetStr(p, "UnderlayProtocol", s->UnderlayProtocol, sizeof(s->UnderlayProtocol));
+	PackGetStr(p, "ProtocolDetails", s->ProtocolDetails, sizeof(s->ProtocolDetails));
 	s->IsUdpAccelerationEnabled = PackGetInt(p, "IsUdpAccelerationEnabled") ? true : false;
 	s->IsUsingUdpAcceleration = PackGetInt(p, "IsUsingUdpAcceleration") ? true : false;
 
@@ -5157,32 +5159,33 @@ void OutRpcClientGetConnectionStatus(PACK *p, RPC_CLIENT_GET_CONNECTION_STATUS *
 
 	PackAddData(p, "SessionKey", c->SessionKey, SHA1_SIZE);
 
-	PackAddInt(p, "Active", c->Active);
-	PackAddInt(p, "Connected", c->Connected);
+	PackAddBool(p, "Active", c->Active);
+	PackAddBool(p, "Connected", c->Connected);
 	PackAddInt(p, "SessionStatus", c->SessionStatus);
 	PackAddInt(p, "ServerPort", c->ServerPort);
 	PackAddInt(p, "ServerProductVer", c->ServerProductVer);
 	PackAddInt(p, "ServerProductBuild", c->ServerProductBuild);
 	PackAddInt(p, "NumConnectionsEatablished", c->NumConnectionsEatablished);
-	PackAddInt(p, "HalfConnection", c->HalfConnection);
-	PackAddInt(p, "QoS", c->QoS);
+	PackAddBool(p, "HalfConnection", c->HalfConnection);
+	PackAddBool(p, "QoS", c->QoS);
 	PackAddInt(p, "MaxTcpConnections", c->MaxTcpConnections);
 	PackAddInt(p, "NumTcpConnections", c->NumTcpConnections);
 	PackAddInt(p, "NumTcpConnectionsUpload", c->NumTcpConnectionsUpload);
 	PackAddInt(p, "NumTcpConnectionsDownload", c->NumTcpConnectionsDownload);
-	PackAddInt(p, "UseEncrypt", c->UseEncrypt);
-	PackAddInt(p, "UseCompress", c->UseCompress);
-	PackAddInt(p, "IsRUDPSession", c->IsRUDPSession);
+	PackAddBool(p, "UseEncrypt", c->UseEncrypt);
+	PackAddBool(p, "UseCompress", c->UseCompress);
+	PackAddBool(p, "IsRUDPSession", c->IsRUDPSession);
 	PackAddStr(p, "UnderlayProtocol", c->UnderlayProtocol);
-	PackAddInt(p, "IsUdpAccelerationEnabled", c->IsUdpAccelerationEnabled);
-	PackAddInt(p, "IsUsingUdpAcceleration", c->IsUsingUdpAcceleration);
+	PackAddStr(p, "ProtocolDetails", c->ProtocolDetails);
+	PackAddBool(p, "IsUdpAccelerationEnabled", c->IsUdpAccelerationEnabled);
+	PackAddBool(p, "IsUsingUdpAcceleration", c->IsUsingUdpAcceleration);
 
 	PackAddBool(p, "IsBridgeMode", c->IsBridgeMode);
 	PackAddBool(p, "IsMonitorMode", c->IsMonitorMode);
 
-	PackAddInt64(p, "StartTime", c->StartTime);
-	PackAddInt64(p, "FirstConnectionEstablisiedTime", c->FirstConnectionEstablisiedTime);
-	PackAddInt64(p, "CurrentConnectionEstablishTime", c->CurrentConnectionEstablishTime);
+	PackAddTime64(p, "StartTime", c->StartTime);
+	PackAddTime64(p, "FirstConnectionEstablisiedTime", c->FirstConnectionEstablisiedTime);
+	PackAddTime64(p, "CurrentConnectionEstablishTime", c->CurrentConnectionEstablishTime);
 	PackAddInt64(p, "TotalSendSize", c->TotalSendSize);
 	PackAddInt64(p, "TotalRecvSize", c->TotalRecvSize);
 	PackAddInt64(p, "TotalSendSizeReal", c->TotalSendSizeReal);
@@ -6133,9 +6136,23 @@ void CiGetSessionStatus(RPC_CLIENT_GET_CONNECTION_STATUS *st, SESSION *s)
 				st->IsRUDPSession = s->IsRUDPSession;
 				// Physical communication protocol
 				StrCpy(st->UnderlayProtocol, sizeof(st->UnderlayProtocol), s->UnderlayProtocol);
+				// Protocol details
+				StrCpy(st->ProtocolDetails, sizeof(st->ProtocolDetails), s->ProtocolDetails);
+				Trim(st->ProtocolDetails);
 				// UDP acceleration function
 				st->IsUdpAccelerationEnabled = s->UseUdpAcceleration;
 				st->IsUsingUdpAcceleration = s->IsUsingUdpAcceleration;
+				if (s->IpcSessionShared != NULL && IsEmptyStr(s->IpcSessionShared->ProtocolDetails) == false)
+				{
+					char tmp[256];
+					StrCpy(tmp, sizeof(tmp), s->IpcSessionShared->ProtocolDetails);
+					Trim(tmp);
+					StrCat(st->ProtocolDetails, sizeof(st->ProtocolDetails), " ");
+					StrCat(st->ProtocolDetails, sizeof(st->ProtocolDetails), tmp);
+
+					st->IsUdpAccelerationEnabled = s->IpcSessionShared->EnableUdpAccel;
+					st->IsUsingUdpAcceleration = s->IpcSessionShared->UsingUdpAccel;
+				}
 				// Session key
 				Copy(st->SessionKey, s->SessionKey, SHA1_SIZE);
 				// Policy
@@ -8930,14 +8947,7 @@ bool CtSetPassword(CLIENT *c, RPC_CLIENT_PASSWORD *pass)
 	{
 		return false;
 	}
-	if (pass->Password == NULL)
-	{
-		str = "";
-	}
-	else
-	{
-		str = pass->Password;
-	}
+	str = pass->Password;
 
 	if (StrCmp(str, "********") != 0)
 	{
@@ -10129,7 +10139,7 @@ char *DecryptPassword(BUF *b)
 	}
 
 	str = ZeroMalloc(b->Size + 1);
-	c = NewCrypt(key, sizeof(key));
+	c = NewCrypt(key, sizeof(key)); // NOTE by Daiyuu Nobori 2018-09-28: This is not a bug! Do not try to fix it!!
 	Encrypt(c, str, b->Buf, b->Size);
 	FreeCrypt(c);
 
@@ -10175,7 +10185,7 @@ BUF *EncryptPassword(char *password)
 	size = StrLen(password) + 1;
 	tmp = ZeroMalloc(size);
 
-	c = NewCrypt(key, sizeof(key));
+	c = NewCrypt(key, sizeof(key)); // NOTE by Daiyuu Nobori 2018-09-28: This is not a bug! Do not try to fix it!!
 	Encrypt(c, tmp, password, size - 1);
 	FreeCrypt(c);
 

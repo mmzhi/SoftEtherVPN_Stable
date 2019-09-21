@@ -1,78 +1,69 @@
 // SoftEther VPN Source Code - Stable Edition Repository
 // Cedar Communication Module
 // 
-// SoftEther VPN Server, Client and Bridge are free software under GPLv2.
+// SoftEther VPN Server, Client and Bridge are free software under the Apache License, Version 2.0.
 // 
 // Copyright (c) Daiyuu Nobori.
 // Copyright (c) SoftEther VPN Project, University of Tsukuba, Japan.
 // Copyright (c) SoftEther Corporation.
+// Copyright (c) all contributors on SoftEther VPN project in GitHub.
 // 
 // All Rights Reserved.
 // 
 // http://www.softether.org/
 // 
-// Author: Daiyuu Nobori, Ph.D.
-// Comments: Tetsuo Sugiyama, Ph.D.
+// This stable branch is officially managed by Daiyuu Nobori, the owner of SoftEther VPN Project.
+// Pull requests should be sent to the Developer Edition Master Repository on https://github.com/SoftEtherVPN/SoftEtherVPN
 // 
-// This program is free software; you can redistribute it and/or
-// modify it under the terms of the GNU General Public License
-// version 2 as published by the Free Software Foundation.
+// License: The Apache License, Version 2.0
+// https://www.apache.org/licenses/LICENSE-2.0
 // 
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-// GNU General Public License for more details.
+// DISCLAIMER
+// ==========
 // 
-// You should have received a copy of the GNU General Public License version 2
-// along with this program; if not, write to the Free Software
-// Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 // 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-// CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// THIS SOFTWARE IS DEVELOPED IN JAPAN, AND DISTRIBUTED FROM JAPAN, UNDER
+// JAPANESE LAWS. YOU MUST AGREE IN ADVANCE TO USE, COPY, MODIFY, MERGE, PUBLISH,
+// DISTRIBUTE, SUBLICENSE, AND/OR SELL COPIES OF THIS SOFTWARE, THAT ANY
+// JURIDICAL DISPUTES WHICH ARE CONCERNED TO THIS SOFTWARE OR ITS CONTENTS,
+// AGAINST US (SOFTETHER PROJECT, SOFTETHER CORPORATION, DAIYUU NOBORI OR OTHER
+// SUPPLIERS), OR ANY JURIDICAL DISPUTES AGAINST US WHICH ARE CAUSED BY ANY KIND
+// OF USING, COPYING, MODIFYING, MERGING, PUBLISHING, DISTRIBUTING, SUBLICENSING,
+// AND/OR SELLING COPIES OF THIS SOFTWARE SHALL BE REGARDED AS BE CONSTRUED AND
+// CONTROLLED BY JAPANESE LAWS, AND YOU MUST FURTHER CONSENT TO EXCLUSIVE
+// JURISDICTION AND VENUE IN THE COURTS SITTING IN TOKYO, JAPAN. YOU MUST WAIVE
+// ALL DEFENSES OF LACK OF PERSONAL JURISDICTION AND FORUM NON CONVENIENS.
+// PROCESS MAY BE SERVED ON EITHER PARTY IN THE MANNER AUTHORIZED BY APPLICABLE
+// LAW OR COURT RULE.
 // 
-// THE LICENSE AGREEMENT IS ATTACHED ON THE SOURCE-CODE PACKAGE
-// AS "LICENSE.TXT" FILE. READ THE TEXT FILE IN ADVANCE TO USE THE SOFTWARE.
+// USE ONLY IN JAPAN. DO NOT USE THIS SOFTWARE IN ANOTHER COUNTRY UNLESS YOU HAVE
+// A CONFIRMATION THAT THIS SOFTWARE DOES NOT VIOLATE ANY CRIMINAL LAWS OR CIVIL
+// RIGHTS IN THAT PARTICULAR COUNTRY. USING THIS SOFTWARE IN OTHER COUNTRIES IS
+// COMPLETELY AT YOUR OWN RISK. THE SOFTETHER VPN PROJECT HAS DEVELOPED AND
+// DISTRIBUTED THIS SOFTWARE TO COMPLY ONLY WITH THE JAPANESE LAWS AND EXISTING
+// CIVIL RIGHTS INCLUDING PATENTS WHICH ARE SUBJECTS APPLY IN JAPAN. OTHER
+// COUNTRIES' LAWS OR CIVIL RIGHTS ARE NONE OF OUR CONCERNS NOR RESPONSIBILITIES.
+// WE HAVE NEVER INVESTIGATED ANY CRIMINAL REGULATIONS, CIVIL LAWS OR
+// INTELLECTUAL PROPERTY RIGHTS INCLUDING PATENTS IN ANY OF OTHER 200+ COUNTRIES
+// AND TERRITORIES. BY NATURE, THERE ARE 200+ REGIONS IN THE WORLD, WITH
+// DIFFERENT LAWS. IT IS IMPOSSIBLE TO VERIFY EVERY COUNTRIES' LAWS, REGULATIONS
+// AND CIVIL RIGHTS TO MAKE THE SOFTWARE COMPLY WITH ALL COUNTRIES' LAWS BY THE
+// PROJECT. EVEN IF YOU WILL BE SUED BY A PRIVATE ENTITY OR BE DAMAGED BY A
+// PUBLIC SERVANT IN YOUR COUNTRY, THE DEVELOPERS OF THIS SOFTWARE WILL NEVER BE
+// LIABLE TO RECOVER OR COMPENSATE SUCH DAMAGES, CRIMINAL OR CIVIL
+// RESPONSIBILITIES. NOTE THAT THIS LINE IS NOT LICENSE RESTRICTION BUT JUST A
+// STATEMENT FOR WARNING AND DISCLAIMER.
 // 
-// 
-// THIS SOFTWARE IS DEVELOPED IN JAPAN, AND DISTRIBUTED FROM JAPAN,
-// UNDER JAPANESE LAWS. YOU MUST AGREE IN ADVANCE TO USE, COPY, MODIFY,
-// MERGE, PUBLISH, DISTRIBUTE, SUBLICENSE, AND/OR SELL COPIES OF THIS
-// SOFTWARE, THAT ANY JURIDICAL DISPUTES WHICH ARE CONCERNED TO THIS
-// SOFTWARE OR ITS CONTENTS, AGAINST US (SOFTETHER PROJECT, SOFTETHER
-// CORPORATION, DAIYUU NOBORI OR OTHER SUPPLIERS), OR ANY JURIDICAL
-// DISPUTES AGAINST US WHICH ARE CAUSED BY ANY KIND OF USING, COPYING,
-// MODIFYING, MERGING, PUBLISHING, DISTRIBUTING, SUBLICENSING, AND/OR
-// SELLING COPIES OF THIS SOFTWARE SHALL BE REGARDED AS BE CONSTRUED AND
-// CONTROLLED BY JAPANESE LAWS, AND YOU MUST FURTHER CONSENT TO
-// EXCLUSIVE JURISDICTION AND VENUE IN THE COURTS SITTING IN TOKYO,
-// JAPAN. YOU MUST WAIVE ALL DEFENSES OF LACK OF PERSONAL JURISDICTION
-// AND FORUM NON CONVENIENS. PROCESS MAY BE SERVED ON EITHER PARTY IN
-// THE MANNER AUTHORIZED BY APPLICABLE LAW OR COURT RULE.
-// 
-// USE ONLY IN JAPAN. DO NOT USE THIS SOFTWARE IN ANOTHER COUNTRY UNLESS
-// YOU HAVE A CONFIRMATION THAT THIS SOFTWARE DOES NOT VIOLATE ANY
-// CRIMINAL LAWS OR CIVIL RIGHTS IN THAT PARTICULAR COUNTRY. USING THIS
-// SOFTWARE IN OTHER COUNTRIES IS COMPLETELY AT YOUR OWN RISK. THE
-// SOFTETHER VPN PROJECT HAS DEVELOPED AND DISTRIBUTED THIS SOFTWARE TO
-// COMPLY ONLY WITH THE JAPANESE LAWS AND EXISTING CIVIL RIGHTS INCLUDING
-// PATENTS WHICH ARE SUBJECTS APPLY IN JAPAN. OTHER COUNTRIES' LAWS OR
-// CIVIL RIGHTS ARE NONE OF OUR CONCERNS NOR RESPONSIBILITIES. WE HAVE
-// NEVER INVESTIGATED ANY CRIMINAL REGULATIONS, CIVIL LAWS OR
-// INTELLECTUAL PROPERTY RIGHTS INCLUDING PATENTS IN ANY OF OTHER 200+
-// COUNTRIES AND TERRITORIES. BY NATURE, THERE ARE 200+ REGIONS IN THE
-// WORLD, WITH DIFFERENT LAWS. IT IS IMPOSSIBLE TO VERIFY EVERY
-// COUNTRIES' LAWS, REGULATIONS AND CIVIL RIGHTS TO MAKE THE SOFTWARE
-// COMPLY WITH ALL COUNTRIES' LAWS BY THE PROJECT. EVEN IF YOU WILL BE
-// SUED BY A PRIVATE ENTITY OR BE DAMAGED BY A PUBLIC SERVANT IN YOUR
-// COUNTRY, THE DEVELOPERS OF THIS SOFTWARE WILL NEVER BE LIABLE TO
-// RECOVER OR COMPENSATE SUCH DAMAGES, CRIMINAL OR CIVIL
-// RESPONSIBILITIES. NOTE THAT THIS LINE IS NOT LICENSE RESTRICTION BUT
-// JUST A STATEMENT FOR WARNING AND DISCLAIMER.
+// READ AND UNDERSTAND THE 'WARNING.TXT' FILE BEFORE USING THIS SOFTWARE.
+// SOME SOFTWARE PROGRAMS FROM THIRD PARTIES ARE INCLUDED ON THIS SOFTWARE WITH
+// LICENSE CONDITIONS WHICH ARE DESCRIBED ON THE 'THIRD_PARTY.TXT' FILE.
 // 
 // 
 // SOURCE CODE CONTRIBUTION
@@ -138,6 +129,8 @@ struct ADMIN
 	LIST *LogFileList;			// Accessible log file list
 	UINT ClientBuild;			// Build number of the client
 	RPC_WINVER ClientWinVer;	// Windows version of client
+	UINT MaxJsonRpcRecvSize;	// Max JSON-RPC Receive Size
+	char dummy1[MAX_HUBNAME_LEN + 1];	// hubname buffer (dummy)
 };
 
 // Test
@@ -224,7 +217,8 @@ struct RPC_INT
 // Set Password
 struct RPC_SET_PASSWORD
 {
-	UCHAR HashedPassword[SHA1_SIZE];	// Hashed password
+	UCHAR HashedPassword[SHA1_SIZE];	// Hashed password (for traditional RPC)
+	char PlainTextPassword[MAX_SIZE];	// Plaintext password (for JSON-RPC)
 };
 
 // Server farm configuration *
@@ -237,6 +231,7 @@ struct RPC_FARM
 	char ControllerName[MAX_HOST_NAME_LEN + 1];	// Controller name
 	UINT ControllerPort;				// Controller port
 	UCHAR MemberPassword[SHA1_SIZE];	// Member password
+	char MemberPasswordPlaintext[MAX_SIZE];	// Member password (plaintext)
 	UINT Weight;						// Performance ratio
 	bool ControllerOnly;				// Only controller function
 };
@@ -342,6 +337,7 @@ struct RPC_CREATE_HUB
 	char HubName[MAX_HUBNAME_LEN + 1];	// HUB Name
 	UCHAR HashedPassword[SHA1_SIZE];	// Administrative password
 	UCHAR SecurePassword[SHA1_SIZE];	// Administrator password
+	char AdminPasswordPlainText[MAX_SIZE];	// Password (plaintext)
 	bool Online;						// Online flag
 	RPC_HUB_OPTION HubOption;			// HUB options
 	UINT HubType;						// Type of HUB
@@ -659,6 +655,7 @@ struct RPC_ENUM_SESSION_ITEM
 	char RemoteHostname[MAX_HOST_NAME_LEN + 1];		// Remote server name
 	char Username[MAX_USERNAME_LEN + 1];			// User name
 	UINT Ip;										// IP address (IPv4)
+	IP ClientIP;									// IP address (IPv4 / IPv6)
 	char Hostname[MAX_HOST_NAME_LEN	+ 1];			// Host name
 	UINT MaxNumTcp;									// Maximum number of TCP connections
 	UINT CurrentNumTcp;								// Number of currentl TCP connections
@@ -675,6 +672,8 @@ struct RPC_ENUM_SESSION_ITEM
 	bool IsDormantEnabled;							// Is the dormant state enabled
 	bool IsDormant;									// Is in the dormant state
 	UINT64 LastCommDormant;							// Last comm interval in the dormant state
+	UINT64 CreatedTime;								// Creation date and time
+	UINT64 LastCommTime;							// Last communication date and time
 };
 
 // Disconnect the session
@@ -711,8 +710,9 @@ struct RPC_ENUM_IP_TABLE_ITEM
 {
 	UINT Key;										// Key
 	char SessionName[MAX_SESSION_NAME_LEN + 1];		// Session name
-	UINT Ip;										// IP address
+	UINT Ip;										// IPv4 address
 	IP IpV6;										// IPv6 address
+	IP IpAddress;									// IPv4 / IPv6 Address
 	bool DhcpAllocated;								// Assigned by the DHCP
 	UINT64 CreatedTime;								// Creation date and time
 	UINT64 UpdatedTime;								// Updating date
@@ -999,6 +999,11 @@ struct RPC_AZURE_STATUS
 };
 
 
+// Constants
+#define ADMIN_RPC_MAX_POST_SIZE_BY_SERVER_ADMIN		MAX_PACK_SIZE
+#define ADMIN_RPC_MAX_POST_SIZE_BY_HUB_ADMIN		(8 * 1024 * 1024)
+
+
 // Function prototype
 UINT AdminAccept(CONNECTION *c, PACK *p);
 void HashAdminPassword(void *hash, char *password);
@@ -1023,6 +1028,26 @@ BUF *DownloadFileFromServer(RPC *r, char *server_name, char *filepath, UINT tota
 bool CheckAdminSourceAddress(SOCK *sock, char *hubname);
 void SiEnumSessionMain(SERVER *s, RPC_ENUM_SESSION *t);
 bool SiIsEmptyPassword(void *hash_password);
+void JsonRpcProcPost(CONNECTION *c, SOCK *s, HTTP_HEADER *h, UINT post_data_size);
+void JsonRpcProcGet(CONNECTION *c, SOCK *s, HTTP_HEADER *h, char *url_target);
+void JsonRpcProcOptions(CONNECTION *c, SOCK *s, HTTP_HEADER *h, char *url_target);
+JSON_VALUE *JsonRpcProcRequestObject(ADMIN *admin, CONNECTION *c, SOCK *s, JSON_VALUE *json_req, char *method_name);
+JSON_VALUE *JsonRpcNewError(int code, wchar_t *message);
+JSON_VALUE *JsonRpcNewResponse(PACK *p);
+bool HttpParseBasicAuthHeader(HTTP_HEADER *h, char *username, UINT username_size, char *password, UINT password_size);
+ADMIN *JsonRpcAuthLogin(CEDAR *c, SOCK *sock, HTTP_HEADER *h);
+JSON_VALUE *QueryStringToJsonListValue(char *qs);
+JSON_VALUE *ConstructDummyJsonRpcRequest(char *method_name, JSON_VALUE *p);
+void AdminWebProcPost(CONNECTION *c, SOCK *s, HTTP_HEADER *h, UINT post_data_size, char *url_target);
+void AdminWebProcGet(CONNECTION *c, SOCK *s, HTTP_HEADER *h, char *url_target);
+bool AdminWebHandleFileRequest(ADMIN *a, CONNECTION *c, SOCK *s, HTTP_HEADER *h, char *url_src, char *query_string, char *virtual_root_dir, char *physical_root_dir);
+BUF *AdminWebProcessServerSideInclude(BUF *src_txt, char *filename, UINT depth);
+bool AdminWebSendBody(SOCK *s, UINT status_code, char *status_string, UCHAR *data, UINT data_size, char *content_type, char *add_header_name, char *add_header_value, HTTP_HEADER *request_headers);
+bool AdminWebSend404Error(SOCK *s, HTTP_HEADER *request_headers);
+bool AdminWebSend302Redirect(SOCK *s, char *url, char *query_string, HTTP_HEADER *request_headers);
+BUF *AdminWebTryFindAndReadFile(char *vroot, char *proot, char *url, char *ret_filename, UINT ret_filename_size, bool *is_index_html);
+BUF *AdminWebTryOneFile(char *filename, char *ret_filename, UINT ret_filename_size);
+bool AdminWebSendUnauthorized(SOCK *s, HTTP_HEADER *http_request_headers);
 
 UINT StTest(ADMIN *a, RPC_TEST *t);
 UINT StGetServerInfo(ADMIN *a, RPC_SERVER_INFO *t);
@@ -1396,7 +1421,7 @@ void OutRpcAccess(PACK *p, ACCESS *a);
 void InRpcEnumAccessList(RPC_ENUM_ACCESS_LIST *a, PACK *p);
 void OutRpcEnumAccessList(PACK *p, RPC_ENUM_ACCESS_LIST *a);
 void FreeRpcEnumAccessList(RPC_ENUM_ACCESS_LIST *a);
-void *InRpcAuthData(PACK *p, UINT *authtype);
+void *InRpcAuthData(PACK *p, UINT *authtype, char *username);
 void OutRpcAuthData(PACK *p, void *authdata, UINT authtype);
 void FreeRpcAuthData(void *authdata, UINT authtype);
 void InRpcSetUser(RPC_SET_USER *t, PACK *p);

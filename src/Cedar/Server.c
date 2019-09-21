@@ -1,78 +1,69 @@
 // SoftEther VPN Source Code - Stable Edition Repository
 // Cedar Communication Module
 // 
-// SoftEther VPN Server, Client and Bridge are free software under GPLv2.
+// SoftEther VPN Server, Client and Bridge are free software under the Apache License, Version 2.0.
 // 
 // Copyright (c) Daiyuu Nobori.
 // Copyright (c) SoftEther VPN Project, University of Tsukuba, Japan.
 // Copyright (c) SoftEther Corporation.
+// Copyright (c) all contributors on SoftEther VPN project in GitHub.
 // 
 // All Rights Reserved.
 // 
 // http://www.softether.org/
 // 
-// Author: Daiyuu Nobori, Ph.D.
-// Comments: Tetsuo Sugiyama, Ph.D.
+// This stable branch is officially managed by Daiyuu Nobori, the owner of SoftEther VPN Project.
+// Pull requests should be sent to the Developer Edition Master Repository on https://github.com/SoftEtherVPN/SoftEtherVPN
 // 
-// This program is free software; you can redistribute it and/or
-// modify it under the terms of the GNU General Public License
-// version 2 as published by the Free Software Foundation.
+// License: The Apache License, Version 2.0
+// https://www.apache.org/licenses/LICENSE-2.0
 // 
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-// GNU General Public License for more details.
+// DISCLAIMER
+// ==========
 // 
-// You should have received a copy of the GNU General Public License version 2
-// along with this program; if not, write to the Free Software
-// Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 // 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-// CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// THIS SOFTWARE IS DEVELOPED IN JAPAN, AND DISTRIBUTED FROM JAPAN, UNDER
+// JAPANESE LAWS. YOU MUST AGREE IN ADVANCE TO USE, COPY, MODIFY, MERGE, PUBLISH,
+// DISTRIBUTE, SUBLICENSE, AND/OR SELL COPIES OF THIS SOFTWARE, THAT ANY
+// JURIDICAL DISPUTES WHICH ARE CONCERNED TO THIS SOFTWARE OR ITS CONTENTS,
+// AGAINST US (SOFTETHER PROJECT, SOFTETHER CORPORATION, DAIYUU NOBORI OR OTHER
+// SUPPLIERS), OR ANY JURIDICAL DISPUTES AGAINST US WHICH ARE CAUSED BY ANY KIND
+// OF USING, COPYING, MODIFYING, MERGING, PUBLISHING, DISTRIBUTING, SUBLICENSING,
+// AND/OR SELLING COPIES OF THIS SOFTWARE SHALL BE REGARDED AS BE CONSTRUED AND
+// CONTROLLED BY JAPANESE LAWS, AND YOU MUST FURTHER CONSENT TO EXCLUSIVE
+// JURISDICTION AND VENUE IN THE COURTS SITTING IN TOKYO, JAPAN. YOU MUST WAIVE
+// ALL DEFENSES OF LACK OF PERSONAL JURISDICTION AND FORUM NON CONVENIENS.
+// PROCESS MAY BE SERVED ON EITHER PARTY IN THE MANNER AUTHORIZED BY APPLICABLE
+// LAW OR COURT RULE.
 // 
-// THE LICENSE AGREEMENT IS ATTACHED ON THE SOURCE-CODE PACKAGE
-// AS "LICENSE.TXT" FILE. READ THE TEXT FILE IN ADVANCE TO USE THE SOFTWARE.
+// USE ONLY IN JAPAN. DO NOT USE THIS SOFTWARE IN ANOTHER COUNTRY UNLESS YOU HAVE
+// A CONFIRMATION THAT THIS SOFTWARE DOES NOT VIOLATE ANY CRIMINAL LAWS OR CIVIL
+// RIGHTS IN THAT PARTICULAR COUNTRY. USING THIS SOFTWARE IN OTHER COUNTRIES IS
+// COMPLETELY AT YOUR OWN RISK. THE SOFTETHER VPN PROJECT HAS DEVELOPED AND
+// DISTRIBUTED THIS SOFTWARE TO COMPLY ONLY WITH THE JAPANESE LAWS AND EXISTING
+// CIVIL RIGHTS INCLUDING PATENTS WHICH ARE SUBJECTS APPLY IN JAPAN. OTHER
+// COUNTRIES' LAWS OR CIVIL RIGHTS ARE NONE OF OUR CONCERNS NOR RESPONSIBILITIES.
+// WE HAVE NEVER INVESTIGATED ANY CRIMINAL REGULATIONS, CIVIL LAWS OR
+// INTELLECTUAL PROPERTY RIGHTS INCLUDING PATENTS IN ANY OF OTHER 200+ COUNTRIES
+// AND TERRITORIES. BY NATURE, THERE ARE 200+ REGIONS IN THE WORLD, WITH
+// DIFFERENT LAWS. IT IS IMPOSSIBLE TO VERIFY EVERY COUNTRIES' LAWS, REGULATIONS
+// AND CIVIL RIGHTS TO MAKE THE SOFTWARE COMPLY WITH ALL COUNTRIES' LAWS BY THE
+// PROJECT. EVEN IF YOU WILL BE SUED BY A PRIVATE ENTITY OR BE DAMAGED BY A
+// PUBLIC SERVANT IN YOUR COUNTRY, THE DEVELOPERS OF THIS SOFTWARE WILL NEVER BE
+// LIABLE TO RECOVER OR COMPENSATE SUCH DAMAGES, CRIMINAL OR CIVIL
+// RESPONSIBILITIES. NOTE THAT THIS LINE IS NOT LICENSE RESTRICTION BUT JUST A
+// STATEMENT FOR WARNING AND DISCLAIMER.
 // 
-// 
-// THIS SOFTWARE IS DEVELOPED IN JAPAN, AND DISTRIBUTED FROM JAPAN,
-// UNDER JAPANESE LAWS. YOU MUST AGREE IN ADVANCE TO USE, COPY, MODIFY,
-// MERGE, PUBLISH, DISTRIBUTE, SUBLICENSE, AND/OR SELL COPIES OF THIS
-// SOFTWARE, THAT ANY JURIDICAL DISPUTES WHICH ARE CONCERNED TO THIS
-// SOFTWARE OR ITS CONTENTS, AGAINST US (SOFTETHER PROJECT, SOFTETHER
-// CORPORATION, DAIYUU NOBORI OR OTHER SUPPLIERS), OR ANY JURIDICAL
-// DISPUTES AGAINST US WHICH ARE CAUSED BY ANY KIND OF USING, COPYING,
-// MODIFYING, MERGING, PUBLISHING, DISTRIBUTING, SUBLICENSING, AND/OR
-// SELLING COPIES OF THIS SOFTWARE SHALL BE REGARDED AS BE CONSTRUED AND
-// CONTROLLED BY JAPANESE LAWS, AND YOU MUST FURTHER CONSENT TO
-// EXCLUSIVE JURISDICTION AND VENUE IN THE COURTS SITTING IN TOKYO,
-// JAPAN. YOU MUST WAIVE ALL DEFENSES OF LACK OF PERSONAL JURISDICTION
-// AND FORUM NON CONVENIENS. PROCESS MAY BE SERVED ON EITHER PARTY IN
-// THE MANNER AUTHORIZED BY APPLICABLE LAW OR COURT RULE.
-// 
-// USE ONLY IN JAPAN. DO NOT USE THIS SOFTWARE IN ANOTHER COUNTRY UNLESS
-// YOU HAVE A CONFIRMATION THAT THIS SOFTWARE DOES NOT VIOLATE ANY
-// CRIMINAL LAWS OR CIVIL RIGHTS IN THAT PARTICULAR COUNTRY. USING THIS
-// SOFTWARE IN OTHER COUNTRIES IS COMPLETELY AT YOUR OWN RISK. THE
-// SOFTETHER VPN PROJECT HAS DEVELOPED AND DISTRIBUTED THIS SOFTWARE TO
-// COMPLY ONLY WITH THE JAPANESE LAWS AND EXISTING CIVIL RIGHTS INCLUDING
-// PATENTS WHICH ARE SUBJECTS APPLY IN JAPAN. OTHER COUNTRIES' LAWS OR
-// CIVIL RIGHTS ARE NONE OF OUR CONCERNS NOR RESPONSIBILITIES. WE HAVE
-// NEVER INVESTIGATED ANY CRIMINAL REGULATIONS, CIVIL LAWS OR
-// INTELLECTUAL PROPERTY RIGHTS INCLUDING PATENTS IN ANY OF OTHER 200+
-// COUNTRIES AND TERRITORIES. BY NATURE, THERE ARE 200+ REGIONS IN THE
-// WORLD, WITH DIFFERENT LAWS. IT IS IMPOSSIBLE TO VERIFY EVERY
-// COUNTRIES' LAWS, REGULATIONS AND CIVIL RIGHTS TO MAKE THE SOFTWARE
-// COMPLY WITH ALL COUNTRIES' LAWS BY THE PROJECT. EVEN IF YOU WILL BE
-// SUED BY A PRIVATE ENTITY OR BE DAMAGED BY A PUBLIC SERVANT IN YOUR
-// COUNTRY, THE DEVELOPERS OF THIS SOFTWARE WILL NEVER BE LIABLE TO
-// RECOVER OR COMPENSATE SUCH DAMAGES, CRIMINAL OR CIVIL
-// RESPONSIBILITIES. NOTE THAT THIS LINE IS NOT LICENSE RESTRICTION BUT
-// JUST A STATEMENT FOR WARNING AND DISCLAIMER.
+// READ AND UNDERSTAND THE 'WARNING.TXT' FILE BEFORE USING THIS SOFTWARE.
+// SOME SOFTWARE PROGRAMS FROM THIRD PARTIES ARE INCLUDED ON THIS SOFTWARE WITH
+// LICENSE CONDITIONS WHICH ARE DESCRIBED ON THE 'THIRD_PARTY.TXT' FILE.
 // 
 // 
 // SOURCE CODE CONTRIBUTION
@@ -1124,52 +1115,72 @@ LIST *EnumLogFile(char *hubname)
 
 	// Enumerate in the packet_log
 	Format(tmp, sizeof(tmp), "%s/packet_log", exe_dir);
-	dir = EnumDir(tmp);
-	if (dir != NULL)
+
+	if (hubname == NULL)
 	{
-		UINT i;
-		for (i = 0;i < dir->NumFiles;i++)
+		dir = EnumDir(tmp);
+		if (dir != NULL)
 		{
-			DIRENT *e = dir->File[i];
-
-			if (e->Folder)
+			UINT i;
+			for (i = 0;i < dir->NumFiles;i++)
 			{
-				char dir_name[MAX_PATH];
+				DIRENT *e = dir->File[i];
 
-				if (hubname == NULL || StrCmpi(hubname, e->FileName) == 0)
+				if (e->Folder)
 				{
+					char dir_name[MAX_PATH];
+
 					Format(dir_name, sizeof(dir_name), "packet_log/%s", e->FileName);
+
 					EnumLogFileDir(o, dir_name);
 				}
 			}
-		}
 
-		FreeDir(dir);
+			FreeDir(dir);
+		}
+	}
+	else
+	{
+		char dir_name[MAX_PATH];
+
+		Format(dir_name, sizeof(dir_name), "packet_log/%s", hubname);
+
+		EnumLogFileDir(o, dir_name);
 	}
 
 	// Enumerate in the security_log
 	Format(tmp, sizeof(tmp), "%s/security_log", exe_dir);
-	dir = EnumDir(tmp);
-	if (dir != NULL)
+
+	if (hubname == NULL)
 	{
-		UINT i;
-		for (i = 0;i < dir->NumFiles;i++)
+		dir = EnumDir(tmp);
+		if (dir != NULL)
 		{
-			DIRENT *e = dir->File[i];
-
-			if (e->Folder)
+			UINT i;
+			for (i = 0;i < dir->NumFiles;i++)
 			{
-				char dir_name[MAX_PATH];
+				DIRENT *e = dir->File[i];
 
-				if (hubname == NULL || StrCmpi(hubname, e->FileName) == 0)
+				if (e->Folder)
 				{
+					char dir_name[MAX_PATH];
+
 					Format(dir_name, sizeof(dir_name), "security_log/%s", e->FileName);
+
 					EnumLogFileDir(o, dir_name);
 				}
 			}
-		}
 
-		FreeDir(dir);
+			FreeDir(dir);
+		}
+	}
+	else
+	{
+		char dir_name[MAX_PATH];
+
+		Format(dir_name, sizeof(dir_name), "security_log/%s", hubname);
+
+		EnumLogFileDir(o, dir_name);
 	}
 
 	return o;
@@ -1359,7 +1370,7 @@ void GetServerCaps(SERVER *s, CAPSLIST *t)
 			GetServerCapsMain(s, s->CapsListCache);
 		}
 
-		Copy(t, s->CapsListCache, sizeof(s->CapsListCache));
+		Copy(t, s->CapsListCache, sizeof(CAPSLIST));
 	}
 	Unlock(s->CapsCacheLock);
 }
@@ -1880,14 +1891,37 @@ void OutRpcCapsList(PACK *p, CAPSLIST *t)
 		return;
 	}
 
+	PackSetCurrentJsonGroupName(p, "CapsList");
 	for (i = 0;i < LIST_NUM(t->CapsList);i++)
 	{
 		char tmp[MAX_SIZE];
+		char ct_key[MAX_PATH];
+		wchar_t ct_description[MAX_PATH];
+		wchar_t *w;
 		CAPS *c = LIST_DATA(t->CapsList, i);
 
 		Format(tmp, sizeof(tmp), "caps_%s", c->Name);
+
+		Format(ct_key, sizeof(ct_key), "CT_%s", c->Name);
+
+		Zero(ct_description, sizeof(ct_description));
+		w = _UU(ct_key);
+		if (UniIsEmptyStr(w) == false)
+		{
+			UniStrCpy(ct_description, sizeof(ct_description), w);
+		}
+		else
+		{
+			StrToUni(ct_description, sizeof(ct_description), c->Name);
+		}
+
 		PackAddInt(p, tmp, c->Value);
+
+		PackAddStrEx(p, "CapsName", c->Name, i, LIST_NUM(t->CapsList));
+		PackAddIntEx(p, "CapsValue", c->Value, i, LIST_NUM(t->CapsList));
+		PackAddUniStrEx(p, "CapsDescrption", ct_description, i, LIST_NUM(t->CapsList));
 	}
+	PackSetCurrentJsonGroupName(p, NULL);
 }
 void FreeRpcCapsList(CAPSLIST *t)
 {
@@ -2102,6 +2136,12 @@ UINT SiCalcPoint(SERVER *s, UINT num, UINT weight)
 	}
 
 	server_max_sessions = GetServerCapsInt(s, "i_max_sessions");
+
+	if (server_max_sessions == 0)
+	{
+		// Avoid divide by zero
+		server_max_sessions = 1;
+	}
 
 	return (UINT)(((double)server_max_sessions -
 		MIN((double)num * 100.0 / (double)weight, (double)server_max_sessions))
@@ -2531,21 +2571,6 @@ void SiInitDefaultHubList(SERVER *s)
 	// Log settings
 	SiSetDefaultLogSetting(&g);
 	SetHubLogSetting(h, &g);
-
-	{
-		UINT i;
-		for (i = 0;i < 0;i++)
-		{
-			char tmp[MAX_SIZE];
-			USER *u;
-			sprintf(tmp, "user%u", i);
-			AcLock(h);
-			u = NewUser(tmp, L"test", L"", AUTHTYPE_ANONYMOUS, NULL);
-			AcAddUser(h, u);
-			ReleaseUser(u);
-			AcUnlock(h);
-		}
-	}
 
 	ReleaseHub(h);
 }
@@ -6185,6 +6210,9 @@ void SiLoadServerCfg(SERVER *s, FOLDER *f)
 		c->SslAcceptSettings.Tls_Disable1_2 = CfgGetBool(f, "Tls_Disable1_2");
 
 		s->StrictSyslogDatetimeFormat = CfgGetBool(f, "StrictSyslogDatetimeFormat");
+
+		// Disable JSON-RPC Web API
+		s->DisableJsonRpcWebApi = CfgGetBool(f, "DisableJsonRpcWebApi");
 	}
 	Unlock(c->lock);
 
@@ -6502,6 +6530,9 @@ void SiWriteServerCfg(FOLDER *f, SERVER *s)
 		CfgAddBool(f, "DisableSessionReconnect", GetGlobalServerFlag(GSF_DISABLE_SESSION_RECONNECT));
 
 		CfgAddBool(f, "StrictSyslogDatetimeFormat", s->StrictSyslogDatetimeFormat);
+
+		// Disable JSON-RPC Web API
+		CfgAddBool(f, "DisableJsonRpcWebApi", s->DisableJsonRpcWebApi);
 	}
 	Unlock(c->lock);
 }
@@ -7229,7 +7260,7 @@ FARM_MEMBER *SiGetNextFarmMember(SERVER *s, CONNECTION *c, HUB *h)
 				PackAddIntEx(p, "NumTcpConnections", f->NumTcpConnections, i, num);
 				PackAddIntEx(p, "NumHubs", LIST_NUM(f->HubList), i, num);
 				PackAddBoolEx(p, "Me", f->Me, i, num);
-				PackAddInt64Ex(p, "ConnectedTime", f->ConnectedTime, i, num);
+				PackAddTime64Ex(p, "ConnectedTime", f->ConnectedTime, i, num);
 				PackAddInt64Ex(p, "SystemId", f->SystemId, i, num);
 				PackAddBoolEx(p, "DoNotSelect", do_not_select, i, num);
 			}
@@ -7258,7 +7289,7 @@ FARM_MEMBER *SiGetNextFarmMember(SERVER *s, CONNECTION *c, HUB *h)
 			PackAddStr(p, "CipherName", c->CipherName);
 			PackAddStr(p, "ClientStr", c->ClientStr);
 			PackAddInt(p, "ClientVer", c->ClientVer);
-			PackAddInt64(p, "ConnectedTime", Tick64ToTime64(c->ConnectedTick));
+			PackAddTime64(p, "ConnectedTime", Tick64ToTime64(c->ConnectedTick));
 
 			PackAddStr(p, "HubName", h->Name);
 			PackAddBool(p, "StaticHub", h->Type == HUB_TYPE_FARM_STATIC);
@@ -7399,8 +7430,8 @@ void SiCalledEnumHub(SERVER *s, PACK *p, PACK *req)
 
 				PackAddIntEx(p, "NumIpTables", LIST_NUM(h->IpTable), i, num);
 
-				PackAddInt64Ex(p, "LastCommTime", h->LastCommTime, i, num);
-				PackAddInt64Ex(p, "CreatedTime", h->CreatedTime, i, num);
+				PackAddTime64Ex(p, "LastCommTime", h->LastCommTime, i, num);
+				PackAddTime64Ex(p, "CreatedTime", h->CreatedTime, i, num);
 			}
 			Unlock(h->lock);
 		}
@@ -9447,7 +9478,7 @@ void SiHubUpdateProc(HUB *h)
 	SERVER *s;
 	UINT i;
 	// Validate arguments
-	if (h == NULL || h->Cedar->Server == NULL || h->Cedar->Server->ServerType != SERVER_TYPE_FARM_CONTROLLER)
+	if (h == NULL || h->Cedar == NULL || h->Cedar->Server == NULL || h->Cedar->Server->ServerType != SERVER_TYPE_FARM_CONTROLLER)
 	{
 		return;
 	}
@@ -10327,12 +10358,16 @@ void SiFarmServMain(SERVER *server, SOCK *sock, FARM_MEMBER *f)
 				}
 
 				// Receive
-				p = HttpServerRecv(sock);
+				p = HttpServerRecvEx(sock, FIRM_SERV_RECV_PACK_MAX_SIZE);
 
 				t->Response = p;
 				Set(t->CompleteEvent);
 
-				send_noop = false;
+				if (p == NULL)
+                {
+                    Disconnect(sock);
+                    goto DISCONNECTED;
+                }
 			}
 		}
 		while (t != NULL);

@@ -1,78 +1,69 @@
 // SoftEther VPN Source Code - Stable Edition Repository
 // Cedar Communication Module
 // 
-// SoftEther VPN Server, Client and Bridge are free software under GPLv2.
+// SoftEther VPN Server, Client and Bridge are free software under the Apache License, Version 2.0.
 // 
 // Copyright (c) Daiyuu Nobori.
 // Copyright (c) SoftEther VPN Project, University of Tsukuba, Japan.
 // Copyright (c) SoftEther Corporation.
+// Copyright (c) all contributors on SoftEther VPN project in GitHub.
 // 
 // All Rights Reserved.
 // 
 // http://www.softether.org/
 // 
-// Author: Daiyuu Nobori, Ph.D.
-// Comments: Tetsuo Sugiyama, Ph.D.
+// This stable branch is officially managed by Daiyuu Nobori, the owner of SoftEther VPN Project.
+// Pull requests should be sent to the Developer Edition Master Repository on https://github.com/SoftEtherVPN/SoftEtherVPN
 // 
-// This program is free software; you can redistribute it and/or
-// modify it under the terms of the GNU General Public License
-// version 2 as published by the Free Software Foundation.
+// License: The Apache License, Version 2.0
+// https://www.apache.org/licenses/LICENSE-2.0
 // 
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-// GNU General Public License for more details.
+// DISCLAIMER
+// ==========
 // 
-// You should have received a copy of the GNU General Public License version 2
-// along with this program; if not, write to the Free Software
-// Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 // 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-// CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// THIS SOFTWARE IS DEVELOPED IN JAPAN, AND DISTRIBUTED FROM JAPAN, UNDER
+// JAPANESE LAWS. YOU MUST AGREE IN ADVANCE TO USE, COPY, MODIFY, MERGE, PUBLISH,
+// DISTRIBUTE, SUBLICENSE, AND/OR SELL COPIES OF THIS SOFTWARE, THAT ANY
+// JURIDICAL DISPUTES WHICH ARE CONCERNED TO THIS SOFTWARE OR ITS CONTENTS,
+// AGAINST US (SOFTETHER PROJECT, SOFTETHER CORPORATION, DAIYUU NOBORI OR OTHER
+// SUPPLIERS), OR ANY JURIDICAL DISPUTES AGAINST US WHICH ARE CAUSED BY ANY KIND
+// OF USING, COPYING, MODIFYING, MERGING, PUBLISHING, DISTRIBUTING, SUBLICENSING,
+// AND/OR SELLING COPIES OF THIS SOFTWARE SHALL BE REGARDED AS BE CONSTRUED AND
+// CONTROLLED BY JAPANESE LAWS, AND YOU MUST FURTHER CONSENT TO EXCLUSIVE
+// JURISDICTION AND VENUE IN THE COURTS SITTING IN TOKYO, JAPAN. YOU MUST WAIVE
+// ALL DEFENSES OF LACK OF PERSONAL JURISDICTION AND FORUM NON CONVENIENS.
+// PROCESS MAY BE SERVED ON EITHER PARTY IN THE MANNER AUTHORIZED BY APPLICABLE
+// LAW OR COURT RULE.
 // 
-// THE LICENSE AGREEMENT IS ATTACHED ON THE SOURCE-CODE PACKAGE
-// AS "LICENSE.TXT" FILE. READ THE TEXT FILE IN ADVANCE TO USE THE SOFTWARE.
+// USE ONLY IN JAPAN. DO NOT USE THIS SOFTWARE IN ANOTHER COUNTRY UNLESS YOU HAVE
+// A CONFIRMATION THAT THIS SOFTWARE DOES NOT VIOLATE ANY CRIMINAL LAWS OR CIVIL
+// RIGHTS IN THAT PARTICULAR COUNTRY. USING THIS SOFTWARE IN OTHER COUNTRIES IS
+// COMPLETELY AT YOUR OWN RISK. THE SOFTETHER VPN PROJECT HAS DEVELOPED AND
+// DISTRIBUTED THIS SOFTWARE TO COMPLY ONLY WITH THE JAPANESE LAWS AND EXISTING
+// CIVIL RIGHTS INCLUDING PATENTS WHICH ARE SUBJECTS APPLY IN JAPAN. OTHER
+// COUNTRIES' LAWS OR CIVIL RIGHTS ARE NONE OF OUR CONCERNS NOR RESPONSIBILITIES.
+// WE HAVE NEVER INVESTIGATED ANY CRIMINAL REGULATIONS, CIVIL LAWS OR
+// INTELLECTUAL PROPERTY RIGHTS INCLUDING PATENTS IN ANY OF OTHER 200+ COUNTRIES
+// AND TERRITORIES. BY NATURE, THERE ARE 200+ REGIONS IN THE WORLD, WITH
+// DIFFERENT LAWS. IT IS IMPOSSIBLE TO VERIFY EVERY COUNTRIES' LAWS, REGULATIONS
+// AND CIVIL RIGHTS TO MAKE THE SOFTWARE COMPLY WITH ALL COUNTRIES' LAWS BY THE
+// PROJECT. EVEN IF YOU WILL BE SUED BY A PRIVATE ENTITY OR BE DAMAGED BY A
+// PUBLIC SERVANT IN YOUR COUNTRY, THE DEVELOPERS OF THIS SOFTWARE WILL NEVER BE
+// LIABLE TO RECOVER OR COMPENSATE SUCH DAMAGES, CRIMINAL OR CIVIL
+// RESPONSIBILITIES. NOTE THAT THIS LINE IS NOT LICENSE RESTRICTION BUT JUST A
+// STATEMENT FOR WARNING AND DISCLAIMER.
 // 
-// 
-// THIS SOFTWARE IS DEVELOPED IN JAPAN, AND DISTRIBUTED FROM JAPAN,
-// UNDER JAPANESE LAWS. YOU MUST AGREE IN ADVANCE TO USE, COPY, MODIFY,
-// MERGE, PUBLISH, DISTRIBUTE, SUBLICENSE, AND/OR SELL COPIES OF THIS
-// SOFTWARE, THAT ANY JURIDICAL DISPUTES WHICH ARE CONCERNED TO THIS
-// SOFTWARE OR ITS CONTENTS, AGAINST US (SOFTETHER PROJECT, SOFTETHER
-// CORPORATION, DAIYUU NOBORI OR OTHER SUPPLIERS), OR ANY JURIDICAL
-// DISPUTES AGAINST US WHICH ARE CAUSED BY ANY KIND OF USING, COPYING,
-// MODIFYING, MERGING, PUBLISHING, DISTRIBUTING, SUBLICENSING, AND/OR
-// SELLING COPIES OF THIS SOFTWARE SHALL BE REGARDED AS BE CONSTRUED AND
-// CONTROLLED BY JAPANESE LAWS, AND YOU MUST FURTHER CONSENT TO
-// EXCLUSIVE JURISDICTION AND VENUE IN THE COURTS SITTING IN TOKYO,
-// JAPAN. YOU MUST WAIVE ALL DEFENSES OF LACK OF PERSONAL JURISDICTION
-// AND FORUM NON CONVENIENS. PROCESS MAY BE SERVED ON EITHER PARTY IN
-// THE MANNER AUTHORIZED BY APPLICABLE LAW OR COURT RULE.
-// 
-// USE ONLY IN JAPAN. DO NOT USE THIS SOFTWARE IN ANOTHER COUNTRY UNLESS
-// YOU HAVE A CONFIRMATION THAT THIS SOFTWARE DOES NOT VIOLATE ANY
-// CRIMINAL LAWS OR CIVIL RIGHTS IN THAT PARTICULAR COUNTRY. USING THIS
-// SOFTWARE IN OTHER COUNTRIES IS COMPLETELY AT YOUR OWN RISK. THE
-// SOFTETHER VPN PROJECT HAS DEVELOPED AND DISTRIBUTED THIS SOFTWARE TO
-// COMPLY ONLY WITH THE JAPANESE LAWS AND EXISTING CIVIL RIGHTS INCLUDING
-// PATENTS WHICH ARE SUBJECTS APPLY IN JAPAN. OTHER COUNTRIES' LAWS OR
-// CIVIL RIGHTS ARE NONE OF OUR CONCERNS NOR RESPONSIBILITIES. WE HAVE
-// NEVER INVESTIGATED ANY CRIMINAL REGULATIONS, CIVIL LAWS OR
-// INTELLECTUAL PROPERTY RIGHTS INCLUDING PATENTS IN ANY OF OTHER 200+
-// COUNTRIES AND TERRITORIES. BY NATURE, THERE ARE 200+ REGIONS IN THE
-// WORLD, WITH DIFFERENT LAWS. IT IS IMPOSSIBLE TO VERIFY EVERY
-// COUNTRIES' LAWS, REGULATIONS AND CIVIL RIGHTS TO MAKE THE SOFTWARE
-// COMPLY WITH ALL COUNTRIES' LAWS BY THE PROJECT. EVEN IF YOU WILL BE
-// SUED BY A PRIVATE ENTITY OR BE DAMAGED BY A PUBLIC SERVANT IN YOUR
-// COUNTRY, THE DEVELOPERS OF THIS SOFTWARE WILL NEVER BE LIABLE TO
-// RECOVER OR COMPENSATE SUCH DAMAGES, CRIMINAL OR CIVIL
-// RESPONSIBILITIES. NOTE THAT THIS LINE IS NOT LICENSE RESTRICTION BUT
-// JUST A STATEMENT FOR WARNING AND DISCLAIMER.
+// READ AND UNDERSTAND THE 'WARNING.TXT' FILE BEFORE USING THIS SOFTWARE.
+// SOME SOFTWARE PROGRAMS FROM THIRD PARTIES ARE INCLUDED ON THIS SOFTWARE WITH
+// LICENSE CONDITIONS WHICH ARE DESCRIBED ON THE 'THIRD_PARTY.TXT' FILE.
 // 
 // 
 // SOURCE CODE CONTRIBUTION
@@ -359,7 +350,7 @@ void UdpAccelSendBlock(UDP_ACCEL *a, BLOCK *b)
 		return;
 	}
 
-	UdpAccelSend(a, b->Buf, b->Size, b->Compressed, a->MaxUdpPacketSize, b->PriorityQoS);
+	UdpAccelSend(a, b->Buf, b->Size, b->Compressed ? 1 : 0, a->MaxUdpPacketSize, b->PriorityQoS);
 }
 
 // Calculate the best MSS
@@ -391,7 +382,7 @@ UINT UdpAccelCalcMss(UDP_ACCEL *a)
 	if (a->PlainTextMode == false)
 	{
 		// IV
-		ret -= UDP_ACCELERATION_PACKET_IV_SIZE;
+		ret -= UDP_ACCELERATION_PACKET_IV_SIZE_V1;
 	}
 
 	// Cookie
@@ -412,7 +403,7 @@ UINT UdpAccelCalcMss(UDP_ACCEL *a)
 	if (a->PlainTextMode == false)
 	{
 		// Verify
-		ret -= UDP_ACCELERATION_PACKET_IV_SIZE;
+		ret -= UDP_ACCELERATION_PACKET_IV_SIZE_V1;
 	}
 
 	// Ethernet header (communication packets)
@@ -428,12 +419,12 @@ UINT UdpAccelCalcMss(UDP_ACCEL *a)
 }
 
 // Send
-void UdpAccelSend(UDP_ACCEL *a, UCHAR *data, UINT data_size, bool compressed, UINT max_size, bool high_priority)
+void UdpAccelSend(UDP_ACCEL *a, UCHAR *data, UINT data_size, UCHAR flag, UINT max_size, bool high_priority)
 {
 	UCHAR tmp[UDP_ACCELERATION_TMP_BUF_SIZE];
 	UCHAR *buf;
 	UINT size;
-	UCHAR key[UDP_ACCELERATION_PACKET_KEY_SIZE];
+	UCHAR key[UDP_ACCELERATION_PACKET_KEY_SIZE_V1];
 	UINT64 ui64;
 	USHORT us;
 	UCHAR c;
@@ -457,27 +448,40 @@ void UdpAccelSend(UDP_ACCEL *a, UCHAR *data, UINT data_size, bool compressed, UI
 	// IV
 	if (a->PlainTextMode == false)
 	{
-		// IV
-		Copy(buf, a->NextIv, UDP_ACCELERATION_PACKET_IV_SIZE);
-
-		buf += UDP_ACCELERATION_PACKET_IV_SIZE;
-		size += UDP_ACCELERATION_PACKET_IV_SIZE;
-
-		// Calculate the key
-		UdpAccelCalcKey(key, a->MyKey, a->NextIv);
-
-		if (false)
+		if (a->Version == 2)
 		{
-			char tmp1[256];
-			char tmp2[256];
-			char tmp3[256];
-			BinToStr(tmp1, sizeof(tmp1), a->MyKey, sizeof(a->MyKey));
-			BinToStr(tmp2, sizeof(tmp2), a->NextIv, UDP_ACCELERATION_PACKET_IV_SIZE);
-			BinToStr(tmp3, sizeof(tmp3), key, sizeof(key));
-			Debug("My Key  : %s\n"
-				  "IV      : %s\n"
-				  "Comm Key: %s\n",
-				  tmp1, tmp2, tmp3);
+			// Version 2.0
+			// IV
+			Copy(buf, a->NextIv_V2, UDP_ACCELERATION_PACKET_IV_SIZE_V2);
+
+			buf += UDP_ACCELERATION_PACKET_IV_SIZE_V2;
+			size += UDP_ACCELERATION_PACKET_IV_SIZE_V2;
+		}
+		else
+		{
+			// Version 1.0
+			// IV
+			Copy(buf, a->NextIv, UDP_ACCELERATION_PACKET_IV_SIZE_V1);
+
+			buf += UDP_ACCELERATION_PACKET_IV_SIZE_V1;
+			size += UDP_ACCELERATION_PACKET_IV_SIZE_V1;
+
+			// Calculate the key
+			UdpAccelCalcKey(key, a->MyKey, a->NextIv);
+
+			if (false)
+			{
+				char tmp1[256];
+				char tmp2[256];
+				char tmp3[256];
+				BinToStr(tmp1, sizeof(tmp1), a->MyKey, sizeof(a->MyKey));
+				BinToStr(tmp2, sizeof(tmp2), a->NextIv, UDP_ACCELERATION_PACKET_IV_SIZE_V1);
+				BinToStr(tmp3, sizeof(tmp3), key, sizeof(key));
+				Debug("My Key  : %s\n"
+					  "IV      : %s\n"
+					  "Comm Key: %s\n",
+					  tmp1, tmp2, tmp3);
+			}
 		}
 	}
 
@@ -505,8 +509,8 @@ void UdpAccelSend(UDP_ACCEL *a, UCHAR *data, UINT data_size, bool compressed, UI
 	buf += sizeof(USHORT);
 	size += sizeof(USHORT);
 
-	// Compress Flag
-	c = (compressed ? 1 : 0);
+	// Flag
+	c = flag;
 	Copy(buf, &c, sizeof(UCHAR));
 	buf += sizeof(UCHAR);
 	size += sizeof(UCHAR);
@@ -521,37 +525,74 @@ void UdpAccelSend(UDP_ACCEL *a, UCHAR *data, UINT data_size, bool compressed, UI
 
 	if (a->PlainTextMode == false)
 	{
-		static UCHAR zero[UDP_ACCELERATION_PACKET_IV_SIZE] = {0};
-		CRYPT *c;
-
-		current_size = UDP_ACCELERATION_PACKET_IV_SIZE + sizeof(UINT) + sizeof(UINT64) * 2 +
-			sizeof(USHORT) + sizeof(UCHAR) + data_size + UDP_ACCELERATION_PACKET_IV_SIZE;
-
-		if (current_size < max_size)
+		if (a->Version == 2)
 		{
+			// Ver 2
 			// Padding
-			UCHAR pad[UDP_ACCELERATION_MAX_PADDING_SIZE];
-			UINT pad_size = MIN(max_size - current_size, UDP_ACCELERATION_MAX_PADDING_SIZE);
-			pad_size = rand() % pad_size;
+			current_size = UDP_ACCELERATION_PACKET_IV_SIZE_V2 + sizeof(UINT) + sizeof(UINT64) * 2 +
+				sizeof(USHORT) + sizeof(UCHAR) + data_size + UDP_ACCELERATION_PACKET_MAC_SIZE_V2;
 
-			Zero(pad, sizeof(pad));
-			Copy(buf, pad, pad_size);
-			buf += pad_size;
-			size += pad_size;
+			if (current_size < max_size)
+			{
+				UCHAR pad[UDP_ACCELERATION_MAX_PADDING_SIZE];
+				UINT pad_size = MIN(max_size - current_size, UDP_ACCELERATION_MAX_PADDING_SIZE);
+				pad_size = rand() % pad_size;
+				Zero(pad, sizeof(pad));
+				Copy(buf, pad, pad_size);
+				buf += pad_size;
+				size += pad_size;
+			}
+
+			// Encryption by RFC 8439: ChaCha20-Poly1305-IETF Encryption with AEAD
+			Aead_ChaCha20Poly1305_Ietf_Encrypt(tmp + UDP_ACCELERATION_PACKET_IV_SIZE_V2,
+				tmp + UDP_ACCELERATION_PACKET_IV_SIZE_V2,
+				size - UDP_ACCELERATION_PACKET_IV_SIZE_V2,
+				a->MyKey_V2,
+				a->NextIv_V2,
+				NULL, 0);
+
+			// Next Iv
+			Copy(a->NextIv_V2,
+				tmp + UDP_ACCELERATION_PACKET_IV_SIZE_V2 + size - UDP_ACCELERATION_PACKET_IV_SIZE_V2 - UDP_ACCELERATION_PACKET_IV_SIZE_V2, UDP_ACCELERATION_PACKET_IV_SIZE_V2);
+
+			// MAC
+			size += UDP_ACCELERATION_PACKET_MAC_SIZE_V2;
 		}
+		else
+		{
+			// Ver 1
+			static UCHAR zero[UDP_ACCELERATION_PACKET_IV_SIZE_V1] = {0};
+			CRYPT *c;
 
-		// Verify
-		Copy(buf, zero, UDP_ACCELERATION_PACKET_IV_SIZE);
-		buf += UDP_ACCELERATION_PACKET_IV_SIZE;
-		size += UDP_ACCELERATION_PACKET_IV_SIZE;
+			current_size = UDP_ACCELERATION_PACKET_IV_SIZE_V1 + sizeof(UINT) + sizeof(UINT64) * 2 +
+				sizeof(USHORT) + sizeof(UCHAR) + data_size + UDP_ACCELERATION_PACKET_IV_SIZE_V1;
 
-		// Encryption
-		c = NewCrypt(key, UDP_ACCELERATION_PACKET_KEY_SIZE);
-		Encrypt(c, tmp + UDP_ACCELERATION_PACKET_IV_SIZE, tmp + UDP_ACCELERATION_PACKET_IV_SIZE, size - UDP_ACCELERATION_PACKET_IV_SIZE);
-		FreeCrypt(c);
+			if (current_size < max_size)
+			{
+				// Padding
+				UCHAR pad[UDP_ACCELERATION_MAX_PADDING_SIZE];
+				UINT pad_size = MIN(max_size - current_size, UDP_ACCELERATION_MAX_PADDING_SIZE);
+				pad_size = rand() % pad_size;
 
-		// Next Iv
-		Copy(a->NextIv, buf - UDP_ACCELERATION_PACKET_IV_SIZE, UDP_ACCELERATION_PACKET_IV_SIZE);
+				Zero(pad, sizeof(pad));
+				Copy(buf, pad, pad_size);
+				buf += pad_size;
+				size += pad_size;
+			}
+
+			// Verify
+			Copy(buf, zero, UDP_ACCELERATION_PACKET_IV_SIZE_V1);
+			buf += UDP_ACCELERATION_PACKET_IV_SIZE_V1;
+			size += UDP_ACCELERATION_PACKET_IV_SIZE_V1;
+
+			// Encryption
+			c = NewCrypt(key, UDP_ACCELERATION_PACKET_KEY_SIZE_V1);
+			Encrypt(c, tmp + UDP_ACCELERATION_PACKET_IV_SIZE_V1, tmp + UDP_ACCELERATION_PACKET_IV_SIZE_V1, size - UDP_ACCELERATION_PACKET_IV_SIZE_V1);
+			FreeCrypt(c);
+
+			// Next Iv
+			Copy(a->NextIv, buf - UDP_ACCELERATION_PACKET_IV_SIZE_V1, UDP_ACCELERATION_PACKET_IV_SIZE_V1);
+		}
 	}
 
 	// Send
@@ -676,7 +717,7 @@ bool UdpAccelIsSendReady(UDP_ACCEL *a, bool check_keepalive)
 // Process the received packet
 BLOCK *UdpAccelProcessRecvPacket(UDP_ACCEL *a, UCHAR *buf, UINT size, IP *src_ip, UINT src_port)
 {
-	UCHAR key[UDP_ACCELERATION_PACKET_KEY_SIZE];
+	UCHAR key[UDP_ACCELERATION_PACKET_KEY_SIZE_V1];
 	UCHAR *iv;
 	CRYPT *c;
 	UINT64 my_tick, your_tick;
@@ -685,6 +726,7 @@ BLOCK *UdpAccelProcessRecvPacket(UDP_ACCEL *a, UCHAR *buf, UINT size, IP *src_ip
 	UINT pad_size;
 	UCHAR *verify;
 	bool compress_flag;
+	UCHAR raw_flag;
 	BLOCK *b = NULL;
 	UINT cookie;
 	// Validate arguments
@@ -695,36 +737,66 @@ BLOCK *UdpAccelProcessRecvPacket(UDP_ACCEL *a, UCHAR *buf, UINT size, IP *src_ip
 
 	if (a->PlainTextMode == false)
 	{
-		// IV
-		if (size < UDP_ACCELERATION_PACKET_IV_SIZE)
+		if (a->Version == 2)
 		{
-			return NULL;
+			// Version 2.0
+			// IV
+			if (size < UDP_ACCELERATION_PACKET_IV_SIZE_V2)
+			{
+				return NULL;
+			}
+			iv = buf;
+			buf += UDP_ACCELERATION_PACKET_IV_SIZE_V2;
+			size -= UDP_ACCELERATION_PACKET_IV_SIZE_V2;
+
+			if (size < AEAD_CHACHA20_POLY1305_MAC_SIZE)
+			{
+				return NULL;
+			}
+
+			// Decryption by RFC 8439: ChaCha20-Poly1305-IETF Encryption with AEAD
+			if (Aead_ChaCha20Poly1305_Ietf_Decrypt(buf, buf, size, a->YourKey_V2,
+				iv, NULL, 0) == false)
+			{
+				return NULL;
+			}
+
+			size -= AEAD_CHACHA20_POLY1305_MAC_SIZE;
 		}
-		iv = buf;
-		buf += UDP_ACCELERATION_PACKET_IV_SIZE;
-		size -= UDP_ACCELERATION_PACKET_IV_SIZE;
-
-		// Calculate the key
-		UdpAccelCalcKey(key, a->YourKey, iv);
-
-		if (false)
+		else
 		{
-			char tmp1[256];
-			char tmp2[256];
-			char tmp3[256];
-			BinToStr(tmp1, sizeof(tmp1), a->YourKey, sizeof(a->YourKey));
-			BinToStr(tmp2, sizeof(tmp2), iv, UDP_ACCELERATION_PACKET_IV_SIZE);
-			BinToStr(tmp3, sizeof(tmp3), key, sizeof(key));
-			Debug("Your Key: %s\n"
-				  "IV      : %s\n"
-				  "Comm Key: %s\n",
-				tmp1, tmp2, tmp3);
-		}
+			// Version 1.0
+			// IV
+			if (size < UDP_ACCELERATION_PACKET_IV_SIZE_V1)
+			{
+				return NULL;
+			}
+			iv = buf;
+			buf += UDP_ACCELERATION_PACKET_IV_SIZE_V1;
+			size -= UDP_ACCELERATION_PACKET_IV_SIZE_V1;
 
-		// Decryption
-		c = NewCrypt(key, UDP_ACCELERATION_PACKET_KEY_SIZE);
-		Encrypt(c, buf, buf, size);
-		FreeCrypt(c);
+			// Calculate the key
+			UdpAccelCalcKey(key, a->YourKey, iv);
+
+			if (false)
+			{
+				char tmp1[256];
+				char tmp2[256];
+				char tmp3[256];
+				BinToStr(tmp1, sizeof(tmp1), a->YourKey, sizeof(a->YourKey));
+				BinToStr(tmp2, sizeof(tmp2), iv, UDP_ACCELERATION_PACKET_IV_SIZE_V1);
+				BinToStr(tmp3, sizeof(tmp3), key, sizeof(key));
+				Debug("Your Key: %s\n"
+					  "IV      : %s\n"
+					  "Comm Key: %s\n",
+					tmp1, tmp2, tmp3);
+			}
+
+			// Decryption
+			c = NewCrypt(key, UDP_ACCELERATION_PACKET_KEY_SIZE_V1);
+			Encrypt(c, buf, buf, size);
+			FreeCrypt(c);
+		}
 	}
 
 	// Cookie
@@ -768,12 +840,20 @@ BLOCK *UdpAccelProcessRecvPacket(UDP_ACCEL *a, UCHAR *buf, UINT size, IP *src_ip
 	buf += sizeof(USHORT);
 	size -= sizeof(USHORT);
 
-	// compress_flag
+	// flag
 	if (size < sizeof(UCHAR))
 	{
 		return NULL;
 	}
-	compress_flag = *((UCHAR *)buf);
+	if (a->ReadRawFlagMode == false)
+	{
+		compress_flag = *((UCHAR *)buf);
+	}
+	else
+	{
+		raw_flag = *((UCHAR *)buf);
+	}
+
 	buf += sizeof(UCHAR);
 	size -= sizeof(UCHAR);
 
@@ -792,26 +872,29 @@ BLOCK *UdpAccelProcessRecvPacket(UDP_ACCEL *a, UCHAR *buf, UINT size, IP *src_ip
 
 	if (a->PlainTextMode == false)
 	{
-		// padding
-		if (size < UDP_ACCELERATION_PACKET_IV_SIZE)
+		if (a->Version == 1)
 		{
-			return false;
-		}
-		pad_size = size - UDP_ACCELERATION_PACKET_IV_SIZE;
-		buf += pad_size;
-		size -= pad_size;
+			// padding
+			if (size < UDP_ACCELERATION_PACKET_IV_SIZE_V1)
+			{
+				return false;
+			}
+			pad_size = size - UDP_ACCELERATION_PACKET_IV_SIZE_V1;
+			buf += pad_size;
+			size -= pad_size;
 
-		// verify
-		if (size != UDP_ACCELERATION_PACKET_IV_SIZE)
-		{
-			return NULL;
-		}
+			// verify
+			if (size != UDP_ACCELERATION_PACKET_IV_SIZE_V1)
+			{
+				return NULL;
+			}
 
-		verify = buf;
+			verify = buf;
 
-		if (IsZero(verify, UDP_ACCELERATION_PACKET_IV_SIZE) == false)
-		{
-			return NULL;
+			if (IsZero(verify, UDP_ACCELERATION_PACKET_IV_SIZE_V1) == false)
+			{
+				return NULL;
+			}
 		}
 	}
 
@@ -828,7 +911,11 @@ BLOCK *UdpAccelProcessRecvPacket(UDP_ACCEL *a, UCHAR *buf, UINT size, IP *src_ip
 
 	if (inner_size >= 1)
 	{
-		b = NewBlock(Clone(inner_data, inner_size), inner_size, compress_flag ? -1 : 0);
+		b = NewBlock(Clone(inner_data, inner_size), inner_size, a->ReadRawFlagMode == false ? (compress_flag ? -1 : 0) : 0);
+		if (a->ReadRawFlagMode)
+		{
+			b->RawFlagRetUdpAccel = raw_flag;
+		}
 	}
 
 	if (a->LastSetSrcIpAndPortTick < a->LastRecvYourTick)
@@ -860,15 +947,15 @@ BLOCK *UdpAccelProcessRecvPacket(UDP_ACCEL *a, UCHAR *buf, UINT size, IP *src_ip
 // Calculate the key
 void UdpAccelCalcKey(UCHAR *key, UCHAR *common_key, UCHAR *iv)
 {
-	UCHAR tmp[UDP_ACCELERATION_COMMON_KEY_SIZE + UDP_ACCELERATION_PACKET_IV_SIZE];
+	UCHAR tmp[UDP_ACCELERATION_COMMON_KEY_SIZE_V1 + UDP_ACCELERATION_PACKET_IV_SIZE_V1];
 	// Validate arguments
 	if (key == NULL || common_key == NULL || iv == NULL)
 	{
 		return;
 	}
 
-	Copy(tmp, common_key, UDP_ACCELERATION_COMMON_KEY_SIZE);
-	Copy(tmp + UDP_ACCELERATION_COMMON_KEY_SIZE, iv, UDP_ACCELERATION_PACKET_IV_SIZE);
+	Copy(tmp, common_key, UDP_ACCELERATION_COMMON_KEY_SIZE_V1);
+	Copy(tmp + UDP_ACCELERATION_COMMON_KEY_SIZE_V1, iv, UDP_ACCELERATION_PACKET_IV_SIZE_V1);
 
 	HashSha1(key, tmp, sizeof(tmp));
 }
@@ -896,7 +983,9 @@ bool UdpAccelInitServer(UDP_ACCEL *a, UCHAR *client_key, IP *client_ip, UINT cli
 	}
 
 	IPToStr(tmp, sizeof(tmp), client_ip);
-	Debug("UdpAccelInitServer: client_ip=%s, client_port=%u, server_cookie=%u, client_cookie=%u\n", tmp, client_port,
+	Debug("UdpAccelInitServer: ver=%u, client_ip=%s, client_port=%u, server_cookie=%u, client_cookie=%u\n",
+		a->Version,
+		tmp, client_port,
 		a->MyCookie, a->YourCookie);
 
 	if (IsIP6(client_ip) != a->IsIPv6)
@@ -904,7 +993,14 @@ bool UdpAccelInitServer(UDP_ACCEL *a, UCHAR *client_key, IP *client_ip, UINT cli
 		return false;
 	}
 
-	Copy(a->YourKey, client_key, UDP_ACCELERATION_COMMON_KEY_SIZE);
+	if (a->Version == 2)
+	{
+		Copy(a->YourKey_V2, client_key, UDP_ACCELERATION_COMMON_KEY_SIZE_V2);
+	}
+	else
+	{
+		Copy(a->YourKey, client_key, UDP_ACCELERATION_COMMON_KEY_SIZE_V1);
+	}
 
 	Copy(&a->YourIp, client_ip, sizeof(IP));
 	Copy(&a->YourIp2, client_ip_2, sizeof(IP));
@@ -928,14 +1024,22 @@ bool UdpAccelInitClient(UDP_ACCEL *a, UCHAR *server_key, IP *server_ip, UINT ser
 	}
 
 	IPToStr(tmp, sizeof(tmp), server_ip);
-	Debug("UdpAccelInitClient: server_ip=%s, server_port=%u, server_cookie=%u, client_cookie=%u\n", tmp, server_port, server_cookie, client_cookie);
+	Debug("UdpAccelInitClient: ver = %u, server_ip=%s, server_port=%u, server_cookie=%u, client_cookie=%u\n",
+		a->Version, tmp, server_port, server_cookie, client_cookie);
 
 	if (IsIP6(server_ip) != a->IsIPv6)
 	{
 		return false;
 	}
 
-	Copy(a->YourKey, server_key, UDP_ACCELERATION_COMMON_KEY_SIZE);
+	if (a->Version == 2)
+	{
+		Copy(a->YourKey_V2, server_key, UDP_ACCELERATION_COMMON_KEY_SIZE_V2);
+	}
+	else
+	{
+		Copy(a->YourKey, server_key, UDP_ACCELERATION_COMMON_KEY_SIZE_V1);
+	}
 
 	Copy(&a->YourIp, server_ip, sizeof(IP));
 	Copy(&a->YourIp2, server_ip_2, sizeof(IP));
@@ -1017,6 +1121,8 @@ UDP_ACCEL *NewUdpAccel(CEDAR *cedar, IP *ip, bool client_mode, bool random_port,
 
 	a->NoNatT = no_nat_t;
 
+	a->Version = 1;
+
 
 	a->NatT_TranId = Rand64();
 
@@ -1030,6 +1136,8 @@ UDP_ACCEL *NewUdpAccel(CEDAR *cedar, IP *ip, bool client_mode, bool random_port,
 	a->UdpSock = s;
 	Rand(a->MyKey, sizeof(a->MyKey));
 	Rand(a->YourKey, sizeof(a->YourKey));
+	Rand(a->MyKey_V2, sizeof(a->MyKey_V2));
+	Rand(a->YourKey_V2, sizeof(a->YourKey_V2));
 
 	Copy(&a->MyIp, ip, sizeof(IP));
 	a->MyPort = s->LocalPort;
@@ -1044,6 +1152,7 @@ UDP_ACCEL *NewUdpAccel(CEDAR *cedar, IP *ip, bool client_mode, bool random_port,
 	a->RecvBlockQueue = NewQueue();
 
 	Rand(a->NextIv, sizeof(a->NextIv));
+	Rand(a->NextIv_V2, sizeof(a->NextIv_V2));
 
 	do
 	{
